@@ -16,8 +16,6 @@ Welcome to the **DevSecOps_WorkShops** repository! This project aims to enhance 
 
 This repository contains a collection of workshops designed to empower our team with the knowledge and tools necessary for effective DevSecOps implementation. Each workshop includes materials, guides, and resources for hands-on learning.
 
-https://github.com/user-attachments/assets/59e28cbb-7347-4da5-b975-75d79c5171bb
-
 ## Workshops
 
 ### Infrastructure Workshop
@@ -45,3 +43,5 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 Thank you for being a part of our learning journey in DevSecOps!
+
+https://github.com/user-attachments/assets/59e28cbb-7347-4da5-b975-75d79c5171bb
