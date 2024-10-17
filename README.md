@@ -21,12 +21,12 @@ This repository contains a collection of workshops designed to empower our team 
 ### Infrastructure Workshop
 This workshop covers best practices for infrastructure management using:
 - [Terraform](Infrastructure_Workshop/Terraform/README.md)
-- [Azure](Infrastructure_Workshop/Azure_CLI/README.md)
+- [Azure CLI](Infrastructure_Workshop/Azure_CLI/README.md)
 
 ### CI Workshop
 This workshop focuses on Continuous Integration using:
 - [GitLab CI](CI_Workshop/GitLab_CI/README.md)
-- [Azure CI](CI_Workshop/Azure_DevOps/README.md)
+- [Azure DevOps](CI_Workshop/Azure_DevOps/README.md)
 
 ### AI Workshop
 This workshop will explore various aspects of Artificial Intelligence. Topics and ideas will be developed over time.  
