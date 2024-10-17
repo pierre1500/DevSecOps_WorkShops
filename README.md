@@ -43,5 +43,3 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 Thank you for being a part of our learning journey in DevSecOps!
-
-https://github.com/user-attachments/assets/59e28cbb-7347-4da5-b975-75d79c5171bb
