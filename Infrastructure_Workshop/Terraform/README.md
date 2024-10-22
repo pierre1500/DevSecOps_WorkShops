@@ -1,6 +1,6 @@
 # Workshop Phoenix – Terraform Mission (Martian Infrastructure)
 
-![gif](https://tenor.com/fr/view/developer-xmooney-alien-code-life-coding-gif-25301196)
+![developer-xmooney](https://github.com/user-attachments/assets/ccd08d33-9092-4f85-8e3f-8b79e0671b60)
 
 ## Introduction
 
