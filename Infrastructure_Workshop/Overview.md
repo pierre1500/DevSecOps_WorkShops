@@ -2,7 +2,7 @@
 
 Welcome to **Mission Phoenix**, where you will step into the shoes of elite DevSecOps operatives entrusted with a critical space mission prepared by the European Space Agency (ESA). In this thrilling adventure, your mission is to establish a sustainable colony on Mars, ensuring both the infrastructure and cybersecurity are robust enough to withstand potential threats. Are you ready to embark on this journey? 🌠
 
-![image](https://github.com/user-attachments/assets/9ed376a0-c7bf-4662-a82d-d2133090673e)
+![image](https://github.com/user-attachments/assets/5753e3e4-cd37-43df-963f-eee21e393882)
 
 ## 🎭 **Role-Playing Scenario**
 
