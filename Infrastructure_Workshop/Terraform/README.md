@@ -8,6 +8,12 @@ Welcome to the Terraform mission for the Martian colony as part of the Phoenix p
 
 The final goal of your mission is to successfully establish a secure connection between the Martian and Earth (Azure) infrastructures, enabling data exchange between the two, such as through a ping or message reception.
 
+
+
+![NASA-Mars-Perseverance-Rover-Driving](https://github.com/user-attachments/assets/bc70ff3a-5fec-40ba-a872-0ac0dcb402cd)
+
+
+
 ## Missions
 
 ### Step 1 – Deployment of the Martian Infrastructure
