@@ -1,18 +1,12 @@
 # Workshop Phoenix – Terraform Mission (Martian Infrastructure)
 
-![developer-xmooney](https://github.com/user-attachments/assets/ccd08d33-9092-4f85-8e3f-8b79e0671b60)
+![NASA-Mars-Perseverance-Rover-Driving](https://github.com/user-attachments/assets/bc70ff3a-5fec-40ba-a872-0ac0dcb402cd)
 
 ## Introduction
 
 Welcome to the Terraform mission for the Martian colony as part of the Phoenix project by the European Space Agency (ESA). Your team is responsible for setting up and securing the infrastructure on Mars using Terraform. You will manage servers, databases, and critical systems while ensuring resilience against simulated cyber threats and guaranteeing secure communication with the Earth-based infrastructure managed by the Azure CLI team.
 
 The final goal of your mission is to successfully establish a secure connection between the Martian and Earth (Azure) infrastructures, enabling data exchange between the two, such as through a ping or message reception.
-
-
-
-![NASA-Mars-Perseverance-Rover-Driving](https://github.com/user-attachments/assets/bc70ff3a-5fec-40ba-a872-0ac0dcb402cd)
-
-
 
 ## Missions
 
@@ -75,3 +69,5 @@ The final goal of your mission is to successfully establish a secure connection 
 ---
 
 Good luck with your mission! Stay vigilant against cyber threats and collaborate closely with the Azure team to successfully interconnect the infrastructures. May the communication between Mars and Earth be smooth and secure!
+
+![developer-xmooney](https://github.com/user-attachments/assets/ccd08d33-9092-4f85-8e3f-8b79e0671b60)
