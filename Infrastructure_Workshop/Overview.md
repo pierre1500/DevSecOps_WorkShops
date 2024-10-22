@@ -2,6 +2,8 @@
 
 Welcome to **Mission Phoenix**, where you will step into the shoes of elite DevSecOps operatives entrusted with a critical space mission prepared by the European Space Agency (ESA). In this thrilling adventure, your mission is to establish a sustainable colony on Mars, ensuring both the infrastructure and cybersecurity are robust enough to withstand potential threats. Are you ready to embark on this journey? 🌠
 
+![alt text](../Assets/image.png)
+
 ## 🎭 **Role-Playing Scenario**
 
 As members of the **DevSecOps Task Force**, you will be divided into two teams: **Team Terraform** and **Team Azure**. Each team will tackle unique challenges that reflect real-world scenarios in managing infrastructure and defending against cyber threats. Your skills, collaboration, and quick thinking will be put to the test as you navigate this high-stakes environment!
