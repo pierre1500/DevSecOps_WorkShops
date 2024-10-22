@@ -1,5 +1,7 @@
 # Workshop Phoenix – Terraform Mission (Martian Infrastructure)
 
+![gif](https://tenor.com/fr/view/developer-xmooney-alien-code-life-coding-gif-25301196)
+
 ## Introduction
 
 Welcome to the Terraform mission for the Martian colony as part of the Phoenix project by the European Space Agency (ESA). Your team is responsible for setting up and securing the infrastructure on Mars using Terraform. You will manage servers, databases, and critical systems while ensuring resilience against simulated cyber threats and guaranteeing secure communication with the Earth-based infrastructure managed by the Azure CLI team.
