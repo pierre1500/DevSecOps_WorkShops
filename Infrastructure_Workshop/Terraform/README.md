@@ -1,4 +1,4 @@
-# 🚀 **Mission Phoenix – Terraform Operations: Martian Infrastructure**🌌
+# **Mission Phoenix – Terraform Operations: Martian Infrastructure** 🚀
 
 ![image](https://github.com/user-attachments/assets/875deb3d-bf19-4256-b070-b65bb7600555)
 
