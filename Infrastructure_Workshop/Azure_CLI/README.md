@@ -1,5 +1,7 @@
 # 🚀 **Mission Phoenix – Azure CLI Operations: Earth Command** 🌍
 
+![023 final](https://github.com/user-attachments/assets/3ca37344-3586-41d1-9b83-c8bb088c9085)
+
 ### **🌌 Welcome, Elite Operative!**
 
 The year is 2055. Humanity has established its first colony on Mars, and the European Space Agency (ESA) is counting on **you** to ensure the survival and prosperity of the mission. As part of the elite **Earth Command** team, you are stationed at the core of Earth’s mission control. Your role? To secure Earth's infrastructure and maintain a seamless connection with the Martian outpost.
