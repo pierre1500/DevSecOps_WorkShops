@@ -46,7 +46,7 @@ The following folders contain details of each mission. Prepare yourself, command
 
 ---
 
-### **[Mission 5: Command and Control Automation](Missions/mission_5.md)**
+### **[Mission 5: Command and Control Automation**](Missions/mission_5.md)
 > **Objective**: Set up proactive monitoring and automated incident responses. Reduce human error by automating infrastructure tasks and threat detection. Ensure cost optimization to sustain the mission long-term.
 >
 > **Threats**: Communication delays and unexpected errors in automated response protocols.
