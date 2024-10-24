@@ -1,6 +1,6 @@
 # 🚀 **Mission Phoenix – Terraform Operations: Martian Infrastructure** 🌌
 
-![NASA-Mars-Perseverance-Rover-Driving](https://github.com/user-attachments/assets/bc70ff3a-5fec-40ba-a872-0ac0dcb402cd)
+![image](https://github.com/user-attachments/assets/875deb3d-bf19-4256-b070-b65bb7600555)
 
 ### **🌍 Welcome, Terraform Commander!**
 
