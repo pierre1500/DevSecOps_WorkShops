@@ -31,8 +31,8 @@ Prepare to don your helmets and step into the role of essential operatives in **
 
 Detailed exercises and resources for **Team Terraform** and **Team Azure** will be securely housed in their respective folders. It is imperative to review these thoroughly to equip yourselves for the challenges that lie ahead!
 
-- **[Team Terraform: Infrastructure Engineers](Terraform/README.md)** 🏗️
 - **[Team Azure: Guardians of the Cloud](Azure_CLI/README.md)** ☁️ 
+- **[Team Terraform: Infrastructure Engineers](Terraform/README.md)** 🏗️
 
 ---
 
