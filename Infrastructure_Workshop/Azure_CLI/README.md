@@ -65,6 +65,6 @@ The following folders contain details of each mission. Prepare yourself, command
 
 ### **💼 Your Next Steps**
 
-Each mission is a piece of the puzzle. Failure is not an option. Click the links to your mission dossiers and begin the work that will safeguard the future of humanity across two worlds. Your command center is ready. Mars is counting on you.
+Each mission is a piece of the puzzle. Failure is not an option. Click the links to your mission folders and begin the work that will safeguard the future of humanity across two worlds. Your command center is ready. Mars is counting on you.
 
 **Mission Control out.**
