@@ -1,6 +1,6 @@
 # 🚀 **Mission Phoenix – Azure CLI Operations: Earth Command** 🌍
 
-![023 final](https://github.com/user-attachments/assets/3ca37344-3586-41d1-9b83-c8bb088c9085)
+![dsn_diagram](https://github.com/user-attachments/assets/592b51aa-97bc-43a1-81ac-a690dcb598f0)
 
 ### **🌌 Welcome, Elite Operative!**
 
