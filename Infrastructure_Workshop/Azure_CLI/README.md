@@ -39,7 +39,7 @@ The following folders contain details of each mission. Prepare yourself, command
 
 ---
 
-### **[Mission 4: Establish the Martian Link**](Missions/mission_4.md)
+### **[Mission 4: Establish the Martian Link**](Missions/mission_4.md)**
 > **Objective**: Create and secure a high-bandwidth communication tunnel between Earth and Mars. Ensure data synchronization and integrity between both planets.
 >
 > **Threats**: Solar flares disrupting communication, potential data corruption during transmission.
