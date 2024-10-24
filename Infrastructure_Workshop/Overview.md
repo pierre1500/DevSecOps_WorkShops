@@ -9,19 +9,19 @@
 
 As members of the **DevSecOps Task Force**, you will be divided into two specialized teams: **Team Terraform** and **Team Azure**. Each team faces a series of challenges that will test your skills, ingenuity, and teamwork in a high-pressure environment.
 
-### **🛠️ Team Terraform: The Infrastructure Engineers of Mars 🏗️**
-**Your Mission:** As the architects of Martian infrastructure, your team will create a resilient and secure foundation for the colony. 
-
-- **Construct the Backbone of the Colony:** Build IaaS/PaaS systems that can withstand the harsh Martian environment and the test of time.
-- **Defend Against the Dark Arts of Cybersecurity:** Implement robust security measures to thwart simulated cyber threats lurking in the shadows.
-- **Empower Life on Mars:** Ensure that your systems support vital operations, from life support to communications.
-
 ### **☁️ Team Azure: Guardians of the Cloud ☁️**
 **Your Mission:** As protectors of interplanetary communication, your team will oversee the seamless exchange of information between Earth and Mars.
 
 - **Forge the Path for Secure Communications:** Design an impenetrable architecture that facilitates safe data flow between the two worlds.
 - **Deploy the Watchful Eyes:** Implement monitoring and security solutions to detect and neutralize potential intrusions before they escalate.
 - **Ensure Harmony Across the Cosmos:** Maintain flawless operations that allow both planets to work in unison.
+
+### **🛠️ Team Terraform: The Infrastructure Engineers of Mars 🏗️**
+**Your Mission:** As the architects of Martian infrastructure, your team will create a resilient and secure foundation for the colony. 
+
+- **Construct the Backbone of the Colony:** Build IaaS/PaaS systems that can withstand the harsh Martian environment and the test of time.
+- **Defend Against the Dark Arts of Cybersecurity:** Implement robust security measures to thwart simulated cyber threats lurking in the shadows.
+- **Empower Life on Mars:** Ensure that your systems support vital operations, from life support to communications.
 
 Prepare to don your helmets and step into the role of essential operatives in **Mission Phoenix**. Your skills and collaboration will be paramount as you navigate this thrilling quest for the future of humankind on Mars! 🌌🛰️
 
