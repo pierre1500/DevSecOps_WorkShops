@@ -1,88 +1,68 @@
-# Workshop Phoenix – Azure CLI Mission (Earth Infrastructure)
+# 🚀 **Mission Phoenix – Azure CLI Operations: Earth Command** 🌍
 
-## Introduction
+### **🌌 Welcome, Elite Operative!**
 
-Welcome to the Azure CLI mission for the Earth-based infrastructure as part of the Phoenix project by the European Space Agency (ESA). Your team is responsible for setting up and securing the Earth infrastructure using Azure CLI. You will deploy advanced monitoring systems, implement high-level security solutions, and ensure resilient communications with the Martian infrastructure, which is managed by the Terraform team.
+The year is 2055. Humanity has established its first colony on Mars, and the European Space Agency (ESA) is counting on **you** to ensure the survival and prosperity of the mission. As part of the elite **Earth Command** team, you are stationed at the core of Earth’s mission control. Your role? To secure Earth's infrastructure and maintain a seamless connection with the Martian outpost.
 
-The final goal of your mission is to successfully establish a secure connection between the Earth (Azure) and Martian infrastructures, allowing data exchange, such as a successful ping or message reception.
+**The Martian colony’s fate rests in your hands.** Every system, every line of code you deploy is critical to the survival of the colonists and the success of interplanetary collaboration.
 
-## Missions
+### **📝 Mission Brief**
 
-### Step 1 – Deployment of the Earth Infrastructure
+As a key member of Earth Command, you will embark on a series of critical missions. Each operation will test your expertise in infrastructure deployment, advanced cybersecurity, and incident response, as well as your ability to handle unforeseen threats from the deep reaches of space.
 
-1. **Creation of Critical Monitoring Systems:**
-   - Use Azure CLI to deploy an advanced **Azure Monitor** setup to track the health of the Martian infrastructure, receiving telemetry data in real time.
-   - Ensure **high availability** for the monitoring systems through **autoscaling** and **zone redundancy** to withstand unexpected high loads.
-
-2. **Deploy a Centralized Log Management System:**
-   - Implement **Azure Log Analytics** to collect and analyze logs from both Earth and Mars infrastructures.
-   - Set up queries to detect unusual activities or errors in the Martian environment, providing real-time insights for security analysis.
-
-### Step 2 – Advanced Security Measures
-
-1. **Identity and Access Management (IAM):**
-   - Set up **Conditional Access** policies to control who can access the Earth infrastructure. Enforce access restrictions based on location (Earth or Mars) and the level of sensitivity of the systems.
-   - Implement **privileged access management** using Azure CLI to control high-privilege roles with **Just-In-Time (JIT) access**.
-
-2. **Implement Secure Networking and Firewalls:**
-   - Use Azure CLI to configure **Private Link** for services, ensuring that the Earth infrastructure communicates with Martian services without exposure to the public internet.
-   - Set up **Azure Firewall** to filter and monitor all inbound and outbound traffic between Earth and Mars, applying custom security rules.
-
-3. **Data Encryption & Key Management:**
-   - Deploy **Azure Key Vault** to manage encryption keys, certificates, and secrets for secure communication between Earth and Mars.
-   - Ensure all data transmissions are encrypted using **end-to-end encryption** with SSL/TLS and manage encryption keys dynamically.
-
-### Step 3 – Resilience to Simulated Cyberattacks
-
-1. **Protection Against Phishing Attacks:**
-   - Set up **Azure Defender for Identity** to detect potential identity-based attacks such as phishing attempts aimed at stealing access credentials for critical systems.
-   - Ensure that identity protection measures are enforced across users, including Mars-based systems, using **Azure Active Directory Identity Protection**.
-
-2. **Simulate a Cyberattack Drill:**
-   - Prepare the infrastructure for a simulated breach by setting up **Azure Sentinel** to monitor suspicious activities.
-   - Automate responses with **Azure Logic Apps** to isolate compromised resources, rotate security credentials, and alert the appropriate teams.
-
-3. **Recovery from Ransomware Attacks:**
-   - Deploy a **backup and recovery** strategy using **Azure Backup** to regularly back up key data and system configurations.
-   - Test the ability to restore Earth systems in case of a ransomware attack by performing a recovery drill.
-
-### Step 4 – Interconnection with Martian Infrastructure
-
-1. **Creating a Secure Communication Tunnel to Mars:**
-   - Use **Azure VPN Gateway** and **Azure ExpressRoute** to set up a secure, high-bandwidth connection between Earth and the Martian infrastructure.
-   - Configure an **Active-Active VPN** setup for redundancy, ensuring a stable connection in case of failure of one VPN endpoint.
-
-2. **Data Synchronization Between Earth and Mars:**
-   - Set up **Azure File Sync** to synchronize critical mission data between Earth-based storage accounts and the Martian environment.
-   - Use **Geo-Replication** in Azure to ensure that important data is replicated between Earth and Mars, maintaining a backup on both ends.
-
-3. **Test Inter-System Communication:**
-   - Perform an **end-to-end ping test** or exchange a small data file to ensure that the Martian and Earth infrastructures are fully connected and operational.
-   - Monitor the latency, packet loss, and security of the connection via **Azure Network Watcher**.
-
-### Step 5 – Advanced Monitoring and Automation
-
-1. **Deploy an Incident Response System:**
-   - Set up **Azure Automation** to handle routine infrastructure tasks, such as patch management and backup verification, to reduce human error.
-   - Automate responses to security incidents by integrating **Azure Logic Apps** with **Azure Sentinel** for triggering automatic isolation of systems during a breach.
-
-2. **Proactive Monitoring with Alerts:**
-   - Configure **Azure Monitor** with custom metrics and alerts to detect anomalies in communication between Earth and Mars, such as high latency or packet drops.
-   - Set up an **Azure Event Grid** for real-time notifications to the team when specific security events or performance thresholds are breached.
-
-3. **Cost Monitoring and Optimization:**
-   - Use **Azure Cost Management + Billing** to track resource usage across Earth and Martian infrastructure, optimizing the costs associated with data transfer, compute resources, and storage.
-   - Identify and shut down underutilized resources using **Azure Advisor** recommendations, helping to reduce mission expenses.
-
-## Objectives to Achieve
-
-- Deploy a **secure, scalable** Earth infrastructure using Azure CLI.
-- Implement robust identity management, network security, and data encryption.
-- Protect the Earth infrastructure from cyberattacks such as phishing, ransomware, and simulated breaches.
-- Establish a **redundant and secure communication link** between Earth and Mars.
-- Perform a final test with a **ping** or data exchange to validate successful interconnection.
-- Ensure proactive monitoring, response automation, and cost optimization for long-term success.
+The following folders contain details of each mission. Prepare yourself, commander.
 
 ---
 
-Good luck with your mission! Troups 
+## 🛰️ **Mission Overview**
+
+### **[Mission 1: Earth Infrastructure Deployment](Missions/mission_1.md)**
+> **Objective**: Deploy and fortify Earth’s infrastructure to establish stable, real-time monitoring of Mars’ colony systems. Ensure high availability through redundancy and autoscaling.
+>
+> **Threats**: Unstable cosmic interference, potential sabotage attempts from unidentified extraterrestrial sources.
+
+---
+
+### **[Mission 2: Fortify Earth’s Defenses](Missions/mission_2.md)**
+> **Objective**: Bolster Earth’s defenses with advanced security measures. Set up IAM policies and secure all communication channels between Earth and Mars using state-of-the-art encryption.
+>
+> **Threats**: Insider threats, external cyberattacks from rogue space nations.
+
+---
+
+### **[Mission 3: Resilience Under Fire](Missions/mission_3.md)**
+> **Objective**: Prepare for the worst-case scenario. Deploy resilience protocols against simulated cyberattacks, including ransomware and phishing attempts. Test Earth’s ability to recover from total system lockdown.
+>
+> **Threats**: Advanced persistent threats (APT) from unknown space entities. Be vigilant, operative.
+
+---
+
+### **[Mission 4: Establish the Martian Link**](Missions/mission_4.md)
+> **Objective**: Create and secure a high-bandwidth communication tunnel between Earth and Mars. Ensure data synchronization and integrity between both planets.
+>
+> **Threats**: Solar flares disrupting communication, potential data corruption during transmission.
+
+---
+
+### **[Mission 5: Command and Control Automation](Missions/mission_5.md)**
+> **Objective**: Set up proactive monitoring and automated incident responses. Reduce human error by automating infrastructure tasks and threat detection. Ensure cost optimization to sustain the mission long-term.
+>
+> **Threats**: Communication delays and unexpected errors in automated response protocols.
+
+---
+
+## 🎯 **Final Mission Objectives**
+
+- **Establish a secure, scalable Earth infrastructure** using Azure CLI.
+- **Defend against advanced cyber threats** and protect Earth-Mars communication links.
+- **Simulate and withstand cyberattacks**, ensuring seamless operation during crises.
+- **Create a secure communication tunnel** between Earth and Mars, maintaining operational integrity.
+- **Automate responses to incidents** and optimize resource usage for long-term planetary collaboration.
+
+---
+
+### **💼 Your Next Steps**
+
+Each mission is a piece of the puzzle. Failure is not an option. Click the links to your mission dossiers and begin the work that will safeguard the future of humanity across two worlds. Your command center is ready. Mars is counting on you.
+
+**Mission Control out.**

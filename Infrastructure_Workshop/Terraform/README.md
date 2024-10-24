@@ -1,73 +1,70 @@
-# Workshop Phoenix – Terraform Mission (Martian Infrastructure)
+# 🚀 **Mission Phoenix – Terraform Operations: Martian Infrastructure** 🌌
 
 ![NASA-Mars-Perseverance-Rover-Driving](https://github.com/user-attachments/assets/bc70ff3a-5fec-40ba-a872-0ac0dcb402cd)
 
-## Introduction
+### **🌍 Welcome, Terraform Commander!**
 
-Welcome to the Terraform mission for the Martian colony as part of the Phoenix project by the European Space Agency (ESA). Your team is responsible for setting up and securing the infrastructure on Mars using Terraform. You will manage servers, databases, and critical systems while ensuring resilience against simulated cyber threats and guaranteeing secure communication with the Earth-based infrastructure managed by the Azure CLI team.
+As part of the **Phoenix Project** initiated by the European Space Agency (ESA), you are entrusted with the monumental task of establishing and securing the infrastructure for the Martian colony. Your expertise in **Terraform** will be pivotal in managing the servers, databases, and critical systems that will sustain life on Mars.
 
-The final goal of your mission is to successfully establish a secure connection between the Martian and Earth (Azure) infrastructures, enabling data exchange between the two, such as through a ping or message reception.
+Your mission is not just about deployment; it's about creating a resilient and secure environment that can withstand simulated cyber threats while ensuring seamless communication with Earth's infrastructure, managed by the **Azure CLI team**.
 
-## Missions
+### **📝 Mission Brief**
 
-### Step 1 – Deployment of the Martian Infrastructure
-
-1. **Creation of Control Servers:**
-   - Use Terraform to provision servers that will play a critical role in managing the colony on Mars.
-   - Ensure these servers have **redundancy** (High Availability - HA) to prevent any operational outages.
-   - Limit the servers' exposure to the outside world via **private IP addresses**.
-
-2. **Deployment of Databases:**
-   - Create and manage resilient databases with automatic replication to avoid loss of critical data.
-   - Implement a **backup plan** and a **disaster recovery** procedure in case of system failure.
-
-### Step 2 – Securing the Infrastructure
-
-1. **Security Groups and Firewalls:**
-   - Configure **security groups** with Terraform to define traffic rules (inbound and outbound). Allow only essential traffic, such as connections from the Earth-based Azure infrastructure.
-   - Implement a firewall to protect access to the Martian infrastructure.
-
-2. **Data Encryption:**
-   - Use **SSL/TLS certificates** to encrypt communications between your Martian systems and Earth.
-   - Ensure that the disks and volumes associated with the servers and databases are also **encrypted**.
-
-3. **Identity and Access Management (IAM):**
-   - Implement restricted access policies using **IAM roles** to grant access only to authorized users or systems.
-   - Enforce **multi-factor authentication (MFA)** for sensitive access.
-
-### Step 3 – Resilience to Simulated Cyberattacks
-
-1. **Automated Security Audits:**
-   - Use Terraform to schedule regular security audits, identifying potential vulnerabilities and automatically fixing risky configurations.
-
-2. **Intrusion Response:**
-   - Deploy an **Intrusion Detection System (IDS)** to monitor for unauthorized access attempts.
-   - Configure automated actions (via Terraform scripts) to disable or isolate compromised systems.
-
-### Step 4 – Interconnection with Azure (Earth) Infrastructure
-
-1. **Opening Communications with Earth:**
-   - Set up a secure endpoint on Mars to accept connections from the Earth-based Azure infrastructure.
-   - Authenticate requests using public/private keys to ensure that only authorized Earth systems can communicate with Mars.
-
-2. **Setting Up an Inter-Infrastructure VPN:**
-   - Create a **secure VPN** between Mars and Earth using IPSec tunnels to ensure encrypted and secure communications.
-   - Perform a **ping test** or send a file between the infrastructures to validate the connection.
-
-3. **Monitoring Communications:** we will see
-   - Deploy tools to monitor data flow and ensure that all transmissions between Mars and Earth are secure and interference-free.
-   - Set up alerts to detect anomalies in traffic.
-
-## Objectives to Achieve
-
-- Deploy a **resilient** and **secure** infrastructure on Mars.
-- Ensure protection against simulated cyberattacks (DDoS, intrusions, etc.).
-- Maintain **service continuity** with redundant systems.
-- Establish a **secure communication** link between Mars and Earth.
-- Perform a final test with a **ping** or data exchange between the two infrastructures.
+The fate of the Martian colony lies in your hands. Each step you take is crucial for the success of this interplanetary endeavor. Prepare yourself for the challenges ahead as you engage in a series of critical missions. Each mission is detailed in the links below, where you will strategize, deploy, and secure the Martian environment.
 
 ---
 
-Good luck with your mission! Stay vigilant against cyber threats and collaborate closely with the Azure team to successfully interconnect the infrastructures. May the communication between Mars and Earth be smooth and secure!
+## 🛰️ **Mission Overview**
 
-![developer-xmooney](https://github.com/user-attachments/assets/ccd08d33-9092-4f85-8e3f-8b79e0671b60)
+### **[Mission 1: Martian Infrastructure Deployment](Missions/mission_1.md)**
+> **Objective**: Provision control servers that will form the backbone of the Martian colony. Implement redundancy to prevent outages and ensure a private network shielded from outside threats.
+>
+> **Threats**: Cosmic radiation and unauthorized access attempts.
+
+---
+
+### **[Mission 2: Fortifying the Martian Infrastructure](Missions/mission_2.md)**
+> **Objective**: Secure your infrastructure with stringent security measures, data encryption, and identity management. Ensure only authorized personnel have access to critical systems.
+>
+> **Threats**: Cyberattacks from rogue AI or hostile extraterrestrial forces.
+
+---
+
+### **[Mission 3: Building Resilience Against Cyber Threats](Missions/mission_3.md)**
+> **Objective**: Establish automated security audits and deploy an Intrusion Detection System (IDS) to monitor for potential breaches. Automate responses to safeguard the colony.
+>
+> **Threats**: Advanced persistent threats aiming to compromise the Martian systems.
+
+---
+
+### **[Mission 4: Establishing Interconnection with Earth](Missions/mission_4.md)**
+> **Objective**: Set up secure communication channels with the Earth-based Azure infrastructure. Authenticate and monitor all communications to ensure safety and integrity.
+>
+> **Threats**: Signal interference and attempts at interception by unauthorized entities.
+
+---
+
+### **[Mission 5: Final Testing and Optimization](Missions/mission_5.md)**
+> **Objective**: Validate the integrity and performance of the Martian infrastructure. Perform final tests to ensure resilience, security, and seamless interconnection with Earth.
+>
+> **Threats**: System overloads and communication failures.
+
+---
+
+## 🎯 **Final Mission Objectives**
+
+- Deploy a **resilient** and **secure infrastructure** on Mars using Terraform.
+- Protect against simulated cyber threats, ensuring operational continuity.
+- Establish a **secure communication link** with the Earth-based Azure infrastructure.
+- Conduct a **ping test** or data exchange to validate inter-system connectivity.
+- Ensure all systems are operational and secured for the long-term sustainability of the Martian colony.
+
+---
+
+### **💼 Your Next Steps**
+
+Dive into each mission folders by clicking the links provided. Collaborate closely with your Azure counterparts to ensure that both Earth and Martian infrastructures are robust and secure. 
+
+**Stay vigilant, Commander. The future of humanity across two worlds depends on your expertise and resilience.**
+
+**Mission Control out.**
