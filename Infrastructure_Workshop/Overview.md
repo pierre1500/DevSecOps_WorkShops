@@ -1,4 +1,5 @@
-![spacex-starship](https://github.com/user-attachments/assets/01f6aa0e-1da2-4e73-9d5d-290486e9a087)
+
+![falcon_heavy_launch_1024](https://github.com/user-attachments/assets/a7262975-2efa-4cdd-88ea-6343399d73e6)
 
 # 🚀 **Mission Phoenix: DevSecOps Workshop on Mars** 🌌
 
