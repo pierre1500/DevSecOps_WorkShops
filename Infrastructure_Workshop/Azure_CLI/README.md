@@ -14,6 +14,8 @@ As a key member of Earth Command, you will embark on a series of critical missio
 
 The following folders contain details of each mission. Prepare yourself, commander.
 
+> **Note**: Before starting, ensure you have Azure CLI installed. Follow the setup instructions in **[Install.md](Install.md)** to get started.
+
 ---
 
 ## 🛰️ **Mission Overview**

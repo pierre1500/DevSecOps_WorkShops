@@ -108,7 +108,7 @@ resource "azurerm_service_plan" "service_plan2" {
   resource_group_name = azurerm_resource_group.rg.name
   os_type             = "Linux"
   name                = "serverless"
-  location            = "France Central"
+  location            = "+Central"
 }
  
 resource "azurerm_key_vault" "default" {
