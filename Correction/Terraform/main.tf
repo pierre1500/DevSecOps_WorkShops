@@ -1,21 +1,13 @@
-# main.tf - Mars Infrastructure Deployment
 
-# Provider Configuration
-provider "azurerm" {
-  features {}
-}
-
-# Step 1 - Create Resource Group for Mars
 resource "azurerm_resource_group" "mars_command_rg" {
   name     = "MarsCommand_RG"
-  location = "Central US"  # Mars command center location setup
+  location = "Central US" # Mars command center location setup
   tags = {
     Mission  = "Phoenix"
     Priority = "Alpha"
   }
 }
 
-# Step 2 - Create Virtual Network for Mars
 resource "azurerm_virtual_network" "mars_vnet" {
   name                = "Mars_VNet"
   location            = azurerm_resource_group.mars_command_rg.location
@@ -23,14 +15,12 @@ resource "azurerm_virtual_network" "mars_vnet" {
   address_space       = ["10.1.0.0/16"]
 }
 
-# Step 3 - Create Network Security Group and Rules for Mars
 resource "azurerm_network_security_group" "mars_nsg" {
   name                = "Mars_NSG"
   location            = azurerm_resource_group.mars_command_rg.location
   resource_group_name = azurerm_resource_group.mars_command_rg.name
 }
 
-# Inbound Rule - Allow SSH
 resource "azurerm_network_security_rule" "allow_ssh" {
   name                        = "Allow-SSH"
   priority                    = 100
@@ -83,7 +73,7 @@ resource "azurerm_network_watcher" "mars_network_watcher" {
 }
 
 resource "azurerm_log_analytics_workspace" "mars_workspace" {
-  name                = "Mars_Workspace"
+  name                = "Mars-Workspace"
   location            = azurerm_resource_group.mars_command_rg.location
   resource_group_name = azurerm_resource_group.mars_command_rg.name
   sku                 = "PerGB2018"
