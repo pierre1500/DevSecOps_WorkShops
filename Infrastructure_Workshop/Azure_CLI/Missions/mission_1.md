@@ -218,17 +218,58 @@ Before moving to the next step:
 
 ---
 
-### **Step 5: Establish a Secure Network Infrastructure**
+### **Step 5: Deploy the Virtual Machine (VM)**
 
-**Objective:** Set up a secure network infrastructure to facilitate communication between Earth and Mars.
+**Objective:** The final step in establishing a secure network infrastructure is to deploy a **Virtual Machine (VM)** that will serve as a management server for Earth operations. This VM will handle critical applications and processes needed for Earth-Mars communications.
+
+**Details:**
+- **VM Name:** EarthOps_VM
+- **Resource Group:** EarthCommand_RG
+- **Image:** Ubuntu 20.04 LTS (for its reliability and support)
+- **VM Size:** Standard D2s v3 (sufficient for managing operations)
+- **Location:** Central US
+- **Network Interface:** Connect to the **EarthMars_VNet** created earlier.
+- **Admin Username:** azureuser
+- **Admin Password:** *Ensure that the password complies with Azure's complexity requirements.*
+
+> **Mission Directive:** Ensure that the VM is configured for secure access and is monitored for performance and security.
 
 ---
 
-### **Details:**
-- **Network Name:** MarsComm_Network
-- **Address Space:** Define the IP address range (e.g., 10.0.0.0/16).
-- **Subnets:** Create subnets for different purposes (e.g., public and private subnets).
+### **🛠️ VM Deployment Task Brief**
 
-> **Mission Directive:** Ensure that the network infrastructure is robust and secure, with proper segmentation to protect sensitive data.
+Attempt to deploy the VM yourself using Azure CLI commands based on the details above. If you need help, reveal the solution by expanding the section below.
+
+<details>
+  <summary>🚀 VM Deployment Solution for Step 6</summary>
+
+  1. **Create the Virtual Network Interface:** Before creating the VM, set up a network interface that connects to the VNet:
+     ```bash
+     az network nic create --resource-group EarthCommand_RG --name EarthOps_NIC --vnet-name EarthMars_VNet --subnet default
+     ```
+
+  2. **Deploy the Virtual Machine:** Use Azure CLI to create the VM with the specified configuration:
+     ```bash
+     az vm create --resource-group EarthCommand_RG --name EarthOps_VM --image UbuntuLTS --size Standard_D2s_v3 --admin-username azureuser --admin-password '<YourComplexPassword>' --nics EarthOps_NIC --location centralus
+     ```
+
+  3. **Open Required Ports:** Allow SSH access to the VM:
+     ```bash
+     az vm open-port --port 22 --resource-group EarthCommand_RG --name EarthOps_VM
+     ```
+
+  4. **Verify VM Deployment:** Check the status of the VM to ensure it was created successfully:
+     ```bash
+     az vm show --resource-group EarthCommand_RG --name EarthOps_VM
+     ```
+
+</details>
 
 ---
+
+### **🔒 Security Checkpoint**
+
+Before concluding your mission:
+- Ensure that the VM has the latest security updates and patches applied.
+- Verify that access to the VM is restricted to authorized personnel only.
+- Configure monitoring on the VM to detect any unusual activities.
