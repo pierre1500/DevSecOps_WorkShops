@@ -1,4 +1,4 @@
-# 🌍 Installation Guide for Terraform and Azure CLI
+# Installation Guide for Terraform and Azure CLI
 
 This guide covers how to install Terraform and configure Azure CLI for credential management on both Windows and Linux.
 
@@ -70,8 +70,8 @@ Terraform and Azure CLI require the following:
 
    - Install unzip to extract the downloaded file:
      ```bash
-     sudo apt-get install unzip -y        # For Debian/Ubuntu
-     sudo yum install unzip -y            # For CentOS/RHEL
+     sudo apt-get install unzip -y
+     sudo yum install unzip -y
      ```
 
 3. **Unzip the Terraform Binary**:
