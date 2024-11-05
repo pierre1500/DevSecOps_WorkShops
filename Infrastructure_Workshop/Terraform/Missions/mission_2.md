@@ -108,7 +108,7 @@ Attempt to configure the security settings using Terraform based on the details 
    resource "azurerm_mssql_server_security_alert_policy" "mars_comm_security_alert" {
      server_id                    = azurerm_mssql_server.earth_sql_server.id
      state                        = "Enabled"
-     email_account_admins         = true
+     email_account_admins         = trueaq
      storage_endpoint             = azurerm_storage_account.earth_storage.primary_blob_endpoint
      storage_account_access_key   = azurerm_storage_account.earth_storage.primary_access_key
    }
