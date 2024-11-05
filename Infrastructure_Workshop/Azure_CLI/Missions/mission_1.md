@@ -1,6 +1,6 @@
-# 🛰️ **Mission 1: Earth Infrastructure Deployment** - *Step 1: Establish the Foundation*
+# 🛰️ **Mission 1: Earth Infrastructure Deployment** - _Step 1: Establish the Foundation_
 
-**Mission Date**: 2055, *Earth Command Center*
+**Mission Date**: 2055, _Earth Command Center_
 
 ---
 
@@ -15,9 +15,10 @@ In this mission, you will complete a series of critical steps to establish Earth
 **Objective:** As the first step, your mission is to create a **Resource Group** to house all essential Earth-based infrastructure. This Resource Group is fundamental for organizing and managing the resources that will support ongoing Mars-Earth collaboration.
 
 **Details:**
+
 - **Resource Group Name:** EarthCommand_RG
-- **Location:** Central US (optimized for real-time Mars-Earth communication)
-- **Tags:** MissionPhoenix, EarthOps, Priority-Alpha
+- **Location:** francecentral (optimized for real-time Mars-Earth communication)
+- **Tags:** asset_owner, asset_project_desc, asset_project_end
 
 > **Mission Directive:** Ensure that the Resource Group is secure and appropriately tagged to facilitate tracking and management. Every resource within this group will play a role in safeguarding communication links and operational systems.
 
@@ -30,21 +31,23 @@ Attempt to deploy the Resource Group yourself using Azure CLI commands based on 
 <details>
   <summary>🚀 Step 1 Deployment Solution</summary>
 
-  1. **Authenticate to Azure CLI:**
-     Begin by establishing a secure session with Azure:
-     ```bash
-     az login
-     ```
+1. **Authenticate to Azure CLI:**
+   Begin by establishing a secure session with Azure:
 
-  2. **Create the Resource Group:** Use the Azure CLI to deploy your Resource Group:
-     ```bash
-     az group create --name EarthCommand_RG --location centralus --tags Mission=Phoenix Priority=Alpha
-     ```
+   ```bash
+   az login
+   ```
 
-  3. **Confirm Deployment:** Verify the Resource Group’s status to ensure successful deployment:
-     ```bash
+2. **Create the Resource Group:** Use the Azure CLI to deploy your Resource Group:
+
+   ```bash
+   az group create --name EarthCommand_RG --location centralus --tags Mission=Phoenix Priority=Alpha
+   ```
+
+3. **Confirm Deployment:** Verify the Resource Group’s status to ensure successful deployment:
+`bash
      az group show --name EarthCommand_RG
-     ```
+     `
 </details>
 
 ---
@@ -52,6 +55,7 @@ Attempt to deploy the Resource Group yourself using Azure CLI commands based on 
 ### **🔒 Security Checkpoint**
 
 Before moving to the next step:
+
 - Verify that the **Resource Group** is accessible only to authorized personnel.
 - Ensure tags are correctly assigned for efficient management.
 
@@ -62,6 +66,7 @@ Before moving to the next step:
 **Objective:** Create a **Virtual Network (VNet)** to ensure secure and isolated communications between Earth's resources and operations on Mars. This step is essential to guarantee that all interplanetary communications remain protected from potential threats.
 
 **Details:**
+
 - **VNet Name:** EarthMars_VNet
 - **Location:** Central US (to minimize latency)
 - **CIDR Address:** 10.0.0.0/16 (allowing for multiple subnets)
@@ -77,15 +82,16 @@ Attempt to configure the VNet yourself using Azure CLI commands based on the det
 <details>
   <summary>🚀 VNet Configuration Solution for Step 2</summary>
 
-  1. **Create the Virtual Network:** Use Azure CLI to create the VNet:
-     ```bash
-     az network vnet create --name EarthMars_VNet --resource-group EarthCommand_RG --location centralus --address-prefix 10.0.0.0/16
-     ```
+1. **Create the Virtual Network:** Use Azure CLI to create the VNet:
 
-  2. **Verify the VNet Configuration:** Ensure that the VNet was created successfully:
-     ```bash
-     az network vnet show --name EarthMars_VNet --resource-group EarthCommand_RG
-     ```
+   ```bash
+   az network vnet create --name EarthMars_VNet --resource-group EarthCommand_RG --location centralus --address-prefix 10.0.0.0/16
+   ```
+
+2. **Verify the VNet Configuration:** Ensure that the VNet was created successfully:
+   ```bash
+   az network vnet show --name EarthMars_VNet --resource-group EarthCommand_RG
+   ```
 
 </details>
 
@@ -94,6 +100,7 @@ Attempt to configure the VNet yourself using Azure CLI commands based on the det
 ### **🔒 Security Checkpoint**
 
 Before proceeding to the next step:
+
 - Ensure that the VNet is isolated from unsecured external networks.
 - Configure security rules to control inbound and outbound traffic.
 
@@ -104,6 +111,7 @@ Before proceeding to the next step:
 **Objective:** Establish Network Security Groups (NSGs) to control inbound and outbound traffic for your resources. This step is critical to ensure that only legitimate traffic can access your Virtual Network and its associated resources, enhancing the security of Earth-Mars communications.
 
 **Details:**
+
 - **NSG Name:** EarthMars_NSG
 - **Associated VNet:** EarthMars_VNet
 - **Inbound Security Rules:**
@@ -124,38 +132,42 @@ Attempt to configure the NSG yourself using Azure CLI commands based on the deta
 <details>
   <summary>🚀 NSG Configuration Solution for Step 3</summary>
 
-  1. **Create the Network Security Group:** Use Azure CLI to create the NSG:
-     ```bash
-     az network nsg create --resource-group EarthCommand_RG --name EarthMars_NSG --location centralus
-     ```
+1. **Create the Network Security Group:** Use Azure CLI to create the NSG:
 
-  2. **Define Inbound Security Rules:** Configure rules to allow SSH and RDP access:
-     ```bash
-     az network nsg rule create --resource-group EarthCommand_RG --nsg-name EarthMars_NSG --name Allow-SSH --protocol tcp --priority 100 --destination-port-range 22 --source-address-prefix 203.0.113.0/24 --access Allow --direction Inbound
-     ```
+   ```bash
+   az network nsg create --resource-group EarthCommand_RG --name EarthMars_NSG --location centralus
+   ```
 
-     ```bash
-     az network nsg rule create --resource-group EarthCommand_RG --nsg-name EarthMars_NSG --name Allow-RDP --protocol tcp --priority 110 --destination-port-range 3389 --source-address-prefix 203.0.113.0/24 --access Allow --direction Inbound
-     ```
+2. **Define Inbound Security Rules:** Configure rules to allow SSH and RDP access:
 
-  3. **Define Outbound Security Rules:** Allow all outbound traffic while denying all others:
-     ```bash
-     az network nsg rule create --resource-group EarthCommand_RG --nsg-name EarthMars_NSG --name Allow-All-Outbound --protocol '*' --priority 100 --access Allow --direction Outbound
-     ```
+   ```bash
+   az network nsg rule create --resource-group EarthCommand_RG --nsg-name EarthMars_NSG --name Allow-SSH --protocol tcp --priority 100 --destination-port-range 22 --source-address-prefix 203.0.113.0/24 --access Allow --direction Inbound
+   ```
 
-     ```bash
-     az network nsg rule create --resource-group EarthCommand_RG --nsg-name EarthMars_NSG --name Deny-All-Outbound --protocol '*' --priority 200 --access Deny --direction Outbound
-     ```
+   ```bash
+   az network nsg rule create --resource-group EarthCommand_RG --nsg-name EarthMars_NSG --name Allow-RDP --protocol tcp --priority 110 --destination-port-range 3389 --source-address-prefix 203.0.113.0/24 --access Allow --direction Inbound
+   ```
 
-  4. **Associate the NSG with the VNet:** Apply the NSG to the EarthMars_VNet:
-     ```bash
-     az network vnet update --resource-group EarthCommand_RG --name EarthMars_VNet --network-security-group EarthMars_NSG
-     ```
+3. **Define Outbound Security Rules:** Allow all outbound traffic while denying all others:
 
-  5. **Verify NSG Configuration:** Check that the NSG has been correctly applied:
-     ```bash
-     az network nsg show --resource-group EarthCommand_RG --name EarthMars_NSG
-     ```
+   ```bash
+   az network nsg rule create --resource-group EarthCommand_RG --nsg-name EarthMars_NSG --name Allow-All-Outbound --protocol '*' --priority 100 --access Allow --direction Outbound
+   ```
+
+   ```bash
+   az network nsg rule create --resource-group EarthCommand_RG --nsg-name EarthMars_NSG --name Deny-All-Outbound --protocol '*' --priority 200 --access Deny --direction Outbound
+   ```
+
+4. **Associate the NSG with the VNet:** Apply the NSG to the EarthMars_VNet:
+
+   ```bash
+   az network vnet update --resource-group EarthCommand_RG --name EarthMars_VNet --network-security-group EarthMars_NSG
+   ```
+
+5. **Verify NSG Configuration:** Check that the NSG has been correctly applied:
+   ```bash
+   az network nsg show --resource-group EarthCommand_RG --name EarthMars_NSG
+   ```
 
 </details>
 
@@ -164,6 +176,7 @@ Attempt to configure the NSG yourself using Azure CLI commands based on the deta
 ### **🔒 Security Checkpoint**
 
 Before proceeding to the next step:
+
 - Review the NSG rules to ensure they align with your security requirements.
 - Confirm that only authorized IP ranges are allowed access.
 
@@ -176,6 +189,7 @@ Before proceeding to the next step:
 ---
 
 ### **Details:**
+
 - **Integrate Azure Monitor** and **Azure Network Watcher** for real-time analytics.
 - **Configure alerts** for suspicious activities or changes in security rules.
 
@@ -190,22 +204,25 @@ Attempt to enable network monitoring yourself using Azure CLI commands based on 
 <details>
   <summary>🚀 Monitoring Configuration Solution for Step 4</summary>
 
-  1. **Create a Log Analytics Workspace:** This workspace will be used to collect and analyze monitoring data.
-     ```bash
-     az monitor log-analytics workspace create --resource-group EarthCommand_RG --workspace-name EarthMars_Workspace --location centralus
-     ```
+1. **Create a Log Analytics Workspace:** This workspace will be used to collect and analyze monitoring data.
 
-  2. **Enable Azure Network Watcher:** This service will help monitor and diagnose network issues.
-     ```bash
-     az network watcher create --resource-group EarthCommand_RG --location centralus
-     ```
+   ```bash
+   az monitor log-analytics workspace create --resource-group EarthCommand_RG --workspace-name EarthMars_Workspace --location centralus
+   ```
 
-  3. **Set Up Alerts for Suspicious Activities:** Create an alert rule for specific metrics or logs.
-     ```bash
-     az monitor metrics alert create --resource-group EarthCommand_RG --name HighCPUAlert --scopes <VM_ID> --condition "avg Percentage CPU > 80" --description "Alert when CPU exceeds 80%" --action <ActionGroup_ID> --window-size 5m --evaluation-frequency 1m
-     ```
+2. **Enable Azure Network Watcher:** This service will help monitor and diagnose network issues.
 
-  > **Note:** Replace `<VM_ID>` and `<ActionGroup_ID>` with the appropriate IDs for your resources and action group.
+   ```bash
+   az network watcher create --resource-group EarthCommand_RG --location centralus
+   ```
+
+3. **Set Up Alerts for Suspicious Activities:** Create an alert rule for specific metrics or logs.
+   ```bash
+   az monitor metrics alert create --resource-group EarthCommand_RG --name HighCPUAlert --scopes <VM_ID> --condition "avg Percentage CPU > 80" --description "Alert when CPU exceeds 80%" --action <ActionGroup_ID> --window-size 5m --evaluation-frequency 1m
+   ```
+
+> **Note:** Replace `<VM_ID>` and `<ActionGroup_ID>` with the appropriate IDs for your resources and action group.
+
 </details>
 
 ---
@@ -213,6 +230,7 @@ Attempt to enable network monitoring yourself using Azure CLI commands based on 
 ### **🔒 Security Checkpoint**
 
 Before moving to the next step:
+
 - Verify that the **monitoring solutions** are correctly integrated and collecting data.
 - Ensure alerts are configured to notify
 
@@ -223,6 +241,7 @@ Before moving to the next step:
 **Objective:** The final step in establishing a secure network infrastructure is to deploy a **Virtual Machine (VM)** that will serve as a management server for Earth operations. This VM will handle critical applications and processes needed for Earth-Mars communications.
 
 **Details:**
+
 - **VM Name:** EarthOps_VM
 - **Resource Group:** EarthCommand_RG
 - **Image:** Ubuntu 20.04 LTS (for its reliability and support)
@@ -230,7 +249,7 @@ Before moving to the next step:
 - **Location:** Central US
 - **Network Interface:** Connect to the **EarthMars_VNet** created earlier.
 - **Admin Username:** azureuser
-- **Admin Password:** *Ensure that the password complies with Azure's complexity requirements.*
+- **Admin Password:** _Ensure that the password complies with Azure's complexity requirements._
 
 > **Mission Directive:** Ensure that the VM is configured for secure access and is monitored for performance and security.
 
@@ -243,25 +262,28 @@ Attempt to deploy the VM yourself using Azure CLI commands based on the details 
 <details>
   <summary>🚀 VM Deployment Solution for Step 6</summary>
 
-  1. **Create the Virtual Network Interface:** Before creating the VM, set up a network interface that connects to the VNet:
-     ```bash
-     az network nic create --resource-group EarthCommand_RG --name EarthOps_NIC --vnet-name EarthMars_VNet --subnet default
-     ```
+1. **Create the Virtual Network Interface:** Before creating the VM, set up a network interface that connects to the VNet:
 
-  2. **Deploy the Virtual Machine:** Use Azure CLI to create the VM with the specified configuration:
-     ```bash
-     az vm create --resource-group EarthCommand_RG --name EarthOps_VM --image UbuntuLTS --size Standard_D2s_v3 --admin-username azureuser --admin-password '<YourComplexPassword>' --nics EarthOps_NIC --location centralus
-     ```
+   ```bash
+   az network nic create --resource-group EarthCommand_RG --name EarthOps_NIC --vnet-name EarthMars_VNet --subnet default
+   ```
 
-  3. **Open Required Ports:** Allow SSH access to the VM:
-     ```bash
-     az vm open-port --port 22 --resource-group EarthCommand_RG --name EarthOps_VM
-     ```
+2. **Deploy the Virtual Machine:** Use Azure CLI to create the VM with the specified configuration:
 
-  4. **Verify VM Deployment:** Check the status of the VM to ensure it was created successfully:
-     ```bash
-     az vm show --resource-group EarthCommand_RG --name EarthOps_VM
-     ```
+   ```bash
+   az vm create --resource-group EarthCommand_RG --name EarthOps_VM --image UbuntuLTS --size Standard_D2s_v3 --admin-username azureuser --admin-password '<YourComplexPassword>' --nics EarthOps_NIC --location centralus
+   ```
+
+3. **Open Required Ports:** Allow SSH access to the VM:
+
+   ```bash
+   az vm open-port --port 22 --resource-group EarthCommand_RG --name EarthOps_VM
+   ```
+
+4. **Verify VM Deployment:** Check the status of the VM to ensure it was created successfully:
+   ```bash
+   az vm show --resource-group EarthCommand_RG --name EarthOps_VM
+   ```
 
 </details>
 
@@ -270,6 +292,7 @@ Attempt to deploy the VM yourself using Azure CLI commands based on the details 
 ### **🔒 Security Checkpoint**
 
 Before concluding your mission:
+
 - Ensure that the VM has the latest security updates and patches applied.
 - Verify that access to the VM is restricted to authorized personnel only.
 - Configure monitoring on the VM to detect any unusual activities.

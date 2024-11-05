@@ -1,10 +1,11 @@
 
 resource "azurerm_resource_group" "mars_command_rg" {
   name     = "MarsCommand_RG"
-  location = "Central US" # Mars command center location setup
+  location = "francecentral" # Mars command center location setup
   tags = {
-    Mission  = "Phoenix"
-    Priority = "Alpha"
+    asset_owner        = "maxime gaspard"
+    asset_project_desc = "Phoenix Mission mars"
+    asset_project_end  = "2025-12-31"
   }
 }
 
@@ -35,7 +36,7 @@ resource "azurerm_network_security_rule" "allow_ssh" {
   resource_group_name         = azurerm_resource_group.mars_command_rg.name
 }
 
-# Inbound Rule - Allow RDP
+
 resource "azurerm_network_security_rule" "allow_rdp" {
   name                        = "Allow-RDP"
   priority                    = 110
@@ -50,7 +51,7 @@ resource "azurerm_network_security_rule" "allow_rdp" {
   resource_group_name         = azurerm_resource_group.mars_command_rg.name
 }
 
-# Outbound Rule - Allow All Outbound
+
 resource "azurerm_network_security_rule" "allow_all_outbound" {
   name                        = "Allow-All-Outbound"
   priority                    = 100
@@ -65,22 +66,7 @@ resource "azurerm_network_security_rule" "allow_all_outbound" {
   resource_group_name         = azurerm_resource_group.mars_command_rg.name
 }
 
-# Step 4 - Enable Network Watcher and Monitoring for Mars
-resource "azurerm_network_watcher" "mars_network_watcher" {
-  name                = "Mars_Network_Watcher"
-  location            = azurerm_resource_group.mars_command_rg.location
-  resource_group_name = azurerm_resource_group.mars_command_rg.name
-}
 
-resource "azurerm_log_analytics_workspace" "mars_workspace" {
-  name                = "Mars-Workspace"
-  location            = azurerm_resource_group.mars_command_rg.location
-  resource_group_name = azurerm_resource_group.mars_command_rg.name
-  sku                 = "PerGB2018"
-  retention_in_days   = 30
-}
-
-# Step 5 - Define Secure Network Infrastructure for Mars
 resource "azurerm_virtual_network" "mars_comm_network" {
   name                = "MarsComm_Network"
   location            = azurerm_resource_group.mars_command_rg.location
@@ -88,7 +74,6 @@ resource "azurerm_virtual_network" "mars_comm_network" {
   address_space       = ["10.1.0.0/16"]
 }
 
-# Public Subnet
 resource "azurerm_subnet" "mars_public_subnet" {
   name                 = "Mars_PublicSubnet"
   resource_group_name  = azurerm_resource_group.mars_command_rg.name
@@ -96,7 +81,7 @@ resource "azurerm_subnet" "mars_public_subnet" {
   address_prefixes     = ["10.1.1.0/24"]
 }
 
-# Private Subnet
+
 resource "azurerm_subnet" "mars_private_subnet" {
   name                 = "Mars_PrivateSubnet"
   resource_group_name  = azurerm_resource_group.mars_command_rg.name

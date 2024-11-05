@@ -16,8 +16,8 @@ In this mission, you will complete a series of critical steps to establish Earth
 
 **Details:**
 - **Resource Group Name:** EarthCommand_RG
-- **Location:** Central France (optimized for real-time Mars-Earth communication)
-- **Tags:** MissionPhoenix, EarthOps, Priority-Alpha
+- **Location:** francecentral (optimized for real-time Mars-Earth communication)
+- **Tags:** asset_owner, asset_project_desc, asset_project_end
 
 > **Mission Directive:** Ensure that the Resource Group is secure and appropriately tagged to facilitate tracking and management. Every resource within this group will play a role in safeguarding communication links and operational systems.
 
