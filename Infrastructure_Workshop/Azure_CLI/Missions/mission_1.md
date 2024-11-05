@@ -41,7 +41,7 @@ Attempt to deploy the Resource Group yourself using Azure CLI commands based on 
 2. **Create the Resource Group:** Use the Azure CLI to deploy your Resource Group:
 
    ```bash
-   az group create --name EarthCommand_RG --location centralus --tags Mission=Phoenix Priority=Alpha
+   az group create --name EarthCommand_RG --location centralus --tags asset_owner="Team_Name" asset_project_desc="Mission Phoenix" asset_project_end="YYYY-MM-DD"
    ```
 
 3. **Confirm Deployment:** Verify the Resource Group’s status to ensure successful deployment:
