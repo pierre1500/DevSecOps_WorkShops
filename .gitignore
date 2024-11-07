@@ -2,4 +2,5 @@ localfile.md
 image.png
 Infrastructure_Workshop/Correction/Terraform/var.tf
 Infrastructure_Workshop/Correction/Terraform/.*
-
+Infrastructure_Workshop/Correction/Terraform/terraform.tfstate
+Infrastructure_Workshop/Correction/Terraform/terraform.tfstate.backup
