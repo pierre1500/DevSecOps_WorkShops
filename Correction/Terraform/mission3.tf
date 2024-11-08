@@ -1,9 +1,10 @@
-resource "azurerm_key_vault" "mars_key_vault" {
+data "azurerm_key_vault" "mars_key_vault" {
   name                = "MarsKeyVault"
   location            = azurerm_resource_group.mars_command_rg.location
   resource_group_name = azurerm_resource_group.mars_command_rg.name
   sku_name            = "standard"
   tenant_id           = var.tenant_id
+
   tags = {
     asset_owner        = "maxime gaspard"
     asset_project_desc = "Phoenix Mission mars"
@@ -14,17 +15,13 @@ resource "azurerm_key_vault" "mars_key_vault" {
 resource "azurerm_key_vault_secret" "sql_admin_password" {
   name         = "sql-admin-password"
   value        = var.sql_admin_password
-  key_vault_id = azurerm_key_vault.mars_key_vault.id
+  key_vault_id = data.azurerm_key_vault.mars_key_vault.id
 }
 
-
-
-
 resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_key_vault" {
-  name                       = "MarsDataMonitor"
-  target_resource_id         = azurerm_mssql_database.mars_comm_db.id
+  name                       = "MarsDataMonitorKeyVault"
+  target_resource_id         = data.azurerm_key_vault.mars_key_vault.id
   log_analytics_workspace_id = azurerm_log_analytics_workspace.mars_log_analytics.id
-  #   storage_account_id         = azurerm_storage_account.audit_storage.id
 
   metric {
     category = "AllMetrics"
@@ -32,3 +29,34 @@ resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_key_vault" {
   }
 }
 
+
+resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_sql" {
+  name                       = "MarsDataMonitorSQL"
+  target_resource_id         = azurerm_mssql_database.mars_comm_db.id
+  log_analytics_workspace_id = azurerm_log_analytics_workspace.mars_log_analytics.id
+
+  metric {
+    category = "AllMetrics"
+    enabled  = true
+  }
+}
+
+# not having access to the mode sentinel
+resource "azurerm_sentinel_alert_rule_scheduled" "unauthorized_access_alert" {
+  name                       = "UnauthorizedAccessAlert"
+  log_analytics_workspace_id = azurerm_log_analytics_workspace.mars_log_analytics.id
+  display_name               = "Unauthorized Access Alert"
+  severity                   = "High"
+  query                      = <<QUERY
+SigninLogs
+| where ResultType != "0"
+| summarize Count=count() by UserPrincipalName, bin(TimeGenerated, 1h)
+| where Count > 5
+QUERY
+  query_frequency            = "PT1H"
+  query_period               = "PT1H"
+  trigger_operator           = "GreaterThan"
+  trigger_threshold          = 0
+  suppression_enabled        = false
+  description                = "Alert for unauthorized access attempts"
+}
