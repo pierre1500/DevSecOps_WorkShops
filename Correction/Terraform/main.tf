@@ -76,3 +76,60 @@ resource "azurerm_subnet" "mars_private_subnet" {
   virtual_network_name = azurerm_virtual_network.mars_comm_network.name
   address_prefixes     = ["10.1.2.0/24"]
 }
+
+resource "azurerm_public_ip" "mars_vm_public_ip" {
+  name                = "MarsVM_PublicIP"
+  location            = azurerm_resource_group.mars_command_rg.location
+  resource_group_name = azurerm_resource_group.mars_command_rg.name
+  allocation_method   = "Dynamic"
+  
+}
+
+resource "azurerm_network_interface" "mars_vm_nic" {
+  name                = "MarsVM_NIC"
+  location            = azurerm_resource_group.mars_command_rg.location
+  resource_group_name = azurerm_resource_group.mars_command_rg.name
+
+  ip_configuration {
+    name                          = "MarsVM_IPConfig"
+    subnet_id                     = azurerm_subnet.mars_public_subnet.id
+    private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.mars_vm_public_ip.id
+  }
+
+}
+
+resource "azurerm_linux_virtual_machine" "mars_vm" {
+  name                  = "MarsVM"
+  location              = azurerm_resource_group.mars_command_rg.location
+  resource_group_name   = azurerm_resource_group.mars_command_rg.name
+  network_interface_ids = [azurerm_network_interface.mars_vm_nic.id]
+  size                  = "Standard_B2ms"
+
+  admin_username                  = "ubuntuadmin"
+  disable_password_authentication = false
+
+  source_image_reference {
+    publisher = "Canonical"
+    offer     = "UbuntuServer"
+    sku       = "18.04-LTS"
+    version   = "latest"
+  }
+
+  os_disk {
+    name                 = "MarsVM_OSDisk"
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  tags = {
+    asset_owner        = "maxime gaspard"
+    asset_project_desc = "Phoenix Mission mars"
+    asset_project_end  = "2025-12-31"
+  }
+}
+
+output "mars_vm_public_ip" {
+  value = azurerm_public_ip.mars_vm_public_ip.ip_address
+}
+

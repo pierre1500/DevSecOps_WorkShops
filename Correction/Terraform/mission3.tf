@@ -1,4 +1,4 @@
-data "azurerm_key_vault" "mars_key_vault" {
+resource "azurerm_key_vault" "mars_key_vault" {
   name                = "MarsKeyVault"
   location            = azurerm_resource_group.mars_command_rg.location
   resource_group_name = azurerm_resource_group.mars_command_rg.name
@@ -15,12 +15,13 @@ data "azurerm_key_vault" "mars_key_vault" {
 resource "azurerm_key_vault_secret" "sql_admin_password" {
   name         = "sql-admin-password"
   value        = var.sql_admin_password
-  key_vault_id = data.azurerm_key_vault.mars_key_vault.id
+  key_vault_id = azurerm_key_vault.mars_key_vault.id
 }
+
 
 resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_key_vault" {
   name                       = "MarsDataMonitorKeyVault"
-  target_resource_id         = data.azurerm_key_vault.mars_key_vault.id
+  target_resource_id         = azurerm_key_vault.mars_key_vault.id
   log_analytics_workspace_id = azurerm_log_analytics_workspace.mars_log_analytics.id
 
   metric {
@@ -28,6 +29,35 @@ resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_key_vault" {
     enabled  = true
   }
 }
+
+# resource "azurerm_key_vault_access_policy" "mars_kv_policy" {
+#   key_vault_id = azurerm_key_vault.mars_key_vault.id
+#   tenant_id    = var.tenant_id
+#   object_id    = 
+#   # Specify permissions for secrets, keys, and certificates
+#   secret_permissions = [
+#     "get",
+#     "list",
+#     "set",
+#     "delete",
+#     "backup",
+#     "restore",
+#   ]
+
+#   key_permissions = [
+#     "get",
+#     "list",
+#     "encrypt",
+#     "decrypt",
+#   ]
+
+#   certificate_permissions = [
+#     "get",
+#     "list",
+#     "update",
+#     "create",
+#   ]
+# }
 
 
 resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_sql" {
@@ -41,7 +71,7 @@ resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_sql" {
   }
 }
 
-# not having access to the mode sentinel
+#not having access to the mode
 resource "azurerm_sentinel_alert_rule_scheduled" "unauthorized_access_alert" {
   name                       = "UnauthorizedAccessAlert"
   log_analytics_workspace_id = azurerm_log_analytics_workspace.mars_log_analytics.id
