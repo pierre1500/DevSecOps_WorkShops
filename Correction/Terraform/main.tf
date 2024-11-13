@@ -81,8 +81,8 @@ resource "azurerm_public_ip" "mars_vm_public_ip" {
   name                = "MarsVM_PublicIP"
   location            = azurerm_resource_group.mars_command_rg.location
   resource_group_name = azurerm_resource_group.mars_command_rg.name
-  allocation_method   = "Dynamic"
-  
+  allocation_method   = "Static"
+  sku                 = "Standard"
 }
 
 resource "azurerm_network_interface" "mars_vm_nic" {
@@ -96,7 +96,6 @@ resource "azurerm_network_interface" "mars_vm_nic" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.mars_vm_public_ip.id
   }
-
 }
 
 resource "azurerm_linux_virtual_machine" "mars_vm" {
@@ -108,12 +107,17 @@ resource "azurerm_linux_virtual_machine" "mars_vm" {
 
   admin_username                  = "ubuntuadmin"
   disable_password_authentication = false
+  admin_password                  = var.vm_password_admin
 
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
     sku       = "18.04-LTS"
     version   = "latest"
+  }
+
+  identity {
+    type = "SystemAssigned"
   }
 
   os_disk {
@@ -123,9 +127,19 @@ resource "azurerm_linux_virtual_machine" "mars_vm" {
   }
 
   tags = {
-    asset_owner        = "maxime gaspard"
-    asset_project_desc = "Phoenix Mission mars"
-    asset_project_end  = "2025-12-31"
+    asset_owner              = "maxime.gaspard@cgi.com"
+    asset_project_desc       = "Phoenix Mission mars"
+    asset_project_start      = "2024-10-16"
+    asset_project_end        = "2025-12-31"
+    availability1            = 1
+    availability2            = 15
+    maintenance1             = "monday"
+    maintenance2             = "friday"
+    shutdownaftermaintenance = "no"
+    barcode                  = "4464_6144_1409481"
+    autostart                = "no"
+    Auto-shutdown            = "no"
+    autoshutdown             = "no"
   }
 }
 

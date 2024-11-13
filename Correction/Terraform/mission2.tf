@@ -19,6 +19,9 @@ resource "azurerm_mssql_database" "mars_comm_db" {
   read_replica_count          = 1
   min_capacity                = 1
   auto_pause_delay_in_minutes = -1
+  short_term_retention_policy {
+    retention_days = 7
+  }
 }
 
 resource "azurerm_mssql_firewall_rule" "mars_command_center_access" {
