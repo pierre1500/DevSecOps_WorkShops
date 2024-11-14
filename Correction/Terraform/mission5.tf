@@ -1,6 +1,11 @@
-resource "azurerm_resource_group" "aks_rg" {
+resource "azurerm_resource_group" "aks_rg_mars" {
   name     = "MarsAks_RG"
   location = "france central"
+  tags = {
+    asset_owner         = "maxime.gaspard@cgi.com"
+    asset_project_desc  = "Phoenix Mission mars"
+    asset_project_start = "2024-10-16"
+  }
 }
 
 resource "azurerm_virtual_network" "aks_vnet" {
@@ -44,7 +49,7 @@ resource "azurerm_kubernetes_cluster" "mars_aks_cluster" {
   network_profile {
     network_plugin    = "azure"
     network_policy    = "azure"
-    load_balancer_sku = "Standard"
+    load_balancer_sku = "standard"
   }
 
   tags = {
