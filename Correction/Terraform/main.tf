@@ -136,7 +136,7 @@ resource "azurerm_linux_virtual_machine" "mars_vm" {
     maintenance1             = "monday"
     maintenance2             = "friday"
     shutdownaftermaintenance = "no"
-    barcode                  = "4464_6144_1409481"
+    barcode                  = var.barcode
     autostart                = "no"
     Auto-shutdown            = "no"
     autoshutdown             = "no"
