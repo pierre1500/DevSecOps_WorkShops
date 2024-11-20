@@ -2,7 +2,7 @@ resource "azurerm_resource_group" "mars_command_rg" {
   name     = "MarsCommand_RG"
   location = "francecentral"
   tags = {
-    asset_owner        = "maxime gaspard"
+    asset_owner        = var.email
     asset_project_desc = "Phoenix Mission mars"
     asset_project_end  = "2025-12-31"
   }
@@ -127,7 +127,7 @@ resource "azurerm_linux_virtual_machine" "mars_vm" {
   }
 
   tags = {
-    asset_owner              = "maxime.gaspard@cgi.com"
+    asset_owner              = var.email
     asset_project_desc       = "Phoenix Mission mars"
     asset_project_start      = "2024-10-16"
     asset_project_end        = "2025-12-31"

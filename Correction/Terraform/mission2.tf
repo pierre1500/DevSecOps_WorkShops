@@ -68,6 +68,6 @@ resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor" {
   }
 }
 
-output "database_connection_test" {
-  value = "Database connection test: Access granted for Mars Command Center IP range (203.0.113.0/24)."
-}
+# output "database_connection_test" {
+#   value = "Database connection test: Access granted for Mars Command Center IP range (203.0.113.0/24)."
+# }

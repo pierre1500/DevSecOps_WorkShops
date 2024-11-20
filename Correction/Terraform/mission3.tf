@@ -1,5 +1,5 @@
 resource "azurerm_key_vault" "mars_test_kv_admin" {
-  name                            = "marstestkvadminuse"
+  name                            = "marstestkvadminusetest2"
   location                        = azurerm_resource_group.mars_command_rg.location
   resource_group_name             = azurerm_resource_group.mars_command_rg.name
   tenant_id                       = var.tenant_id
@@ -87,7 +87,7 @@ resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_sql" {
   }
 }
 
-#not having access to the mode
+# not having access to the mode
 # resource "azurerm_sentinel_alert_rule_scheduled" "unauthorized_access_alert" {
 #   name                       = "UnauthorizedAccessAlert"
 #   log_analytics_workspace_id = azurerm_log_analytics_workspace.mars_log_analytics.id

@@ -6,7 +6,7 @@ resource "azurerm_container_registry" "mars_acr_advanced" {
   sku                 = "Premium"
 
   tags = {
-    asset_owner        = "maxime gaspard"
+    asset_owner        = var.email
     asset_project_desc = "Phoenix Mission mars"
   }
 
@@ -22,5 +22,5 @@ resource "azurerm_container_registry" "mars_acr_advanced" {
 resource "azurerm_role_assignment" "acr_push_role" {
   scope                = azurerm_container_registry.mars_acr_advanced.id
   role_definition_name = "AcrPush"
-  principal_id         = azurerm_linux_virtual_machine.mars_vm.identity[0].principal_id
+  principal_id         = var.appId
 }
