@@ -1,5 +1,3 @@
-![CGI](https://github.com/user-attachments/assets/dc3b4685-4c0a-42cc-997b-830790adc259)
-
 # 🚀 **DevSecOps_WorkShops** 🎮 
 
 Welcome to the **DevSecOps_WorkShops** repository! This project aims to enhance the skills of our team members in DevSecOps practices through collaborative and fun workshops.
