@@ -1,26 +1,27 @@
-
-resource "azurerm_container_registry" "mars_acr_advanced" {
-  name                = "marsacrsecure"
+resource "azurerm_recovery_services_vault" "mars_backup_vault" {
+  name                = "MarsBackupVault"
   location            = azurerm_resource_group.mars_command_rg.location
   resource_group_name = azurerm_resource_group.mars_command_rg.name
-  sku                 = "Premium"
+  sku                 = "Standard"
+}
 
-  tags = {
-    asset_owner        = var.email
-    asset_project_desc = "Phoenix Mission mars"
+resource "azurerm_backup_policy_vm" "mars_backup_policy" {
+  name                = "MarsVMBackupPolicy"
+  resource_group_name = azurerm_resource_group.mars_command_rg.name
+  recovery_vault_name = azurerm_recovery_services_vault.mars_backup_vault.name
+
+  backup {
+    frequency = "Daily"
+    time      = "12:00"
   }
-
-  network_rule_set {
-    default_action = "Deny"
-    ip_rule {
-      action   = "Allow"
-      ip_range = "203.0.113.0/24"
-    }
+  retention_daily {
+    count = 7
   }
 }
 
-resource "azurerm_role_assignment" "acr_push_role" {
-  scope                = azurerm_container_registry.mars_acr_advanced.id
-  role_definition_name = "AcrPush"
-  principal_id         = var.appId
+resource "azurerm_backup_protected_vm" "mars_vm_backup" {
+  resource_group_name       = azurerm_resource_group.mars_command_rg.name
+  recovery_vault_name       = azurerm_recovery_services_vault.mars_backup_vault.name
+  source_vm_id              = azurerm_linux_virtual_machine.mars_vm.id
+  backup_policy_id          = azurerm_backup_policy_vm.mars_backup_policy.id
 }

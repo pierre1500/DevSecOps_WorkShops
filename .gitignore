@@ -3,5 +3,6 @@ image.png
 Correction/Terraform/var.tf
 Correction/Terraform/.terraform*
 Correction/Terraform/terraform.*
+bancommit/*
 
 

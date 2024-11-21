@@ -148,8 +148,8 @@ output "mars_vm_public_ip" {
 }
 
 
-resource "azurerm_role_assignment" "vm_contributor_role" {
-  scope                = azurerm_resource_group.mars_command_rg.id
-  role_definition_name = "Contributor"
-  principal_id         = azurerm_linux_virtual_machine.mars_vm.identity[0].principal_id
-}
+# resource "azurerm_role_assignment" "vm_contributor_role" {
+#   scope                = azurerm_resource_group.mars_command_rg.id
+#   role_definition_name = "Contributor"
+#   principal_id         = azurerm_linux_virtual_machine.mars_vm.identity[0].principal_id
+# }
