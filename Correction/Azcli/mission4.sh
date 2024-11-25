@@ -10,6 +10,3 @@ vm_id=$(az vm show --name EarthVM --resource-group EarthCommand_RG --query id -o
 
 az backup protection enable-for-vm --vault-name EarthBackupVault --resource-group EarthCommand_RG --vm "$vm_id" --policy-name EarthVMBackupPolicy
 
-------------------------------------------------------------------------------------------------------------
-
-echo "Coffre de récupération et sauvegarde de la VM configurés pour la mission Earth."
