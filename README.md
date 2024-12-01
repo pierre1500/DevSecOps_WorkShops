@@ -26,7 +26,6 @@ This workshop is designed to explore and compare various infrastructure manageme
 ### ⚙️ **CI Workshop**
 This workshop focuses on Continuous Integration using:
 
-- [Azure CLI Overview and Exercise](Infrastructure_Workshop/Azure_CLI/Overview.md) ☁️ 
 - [GitLab CI](CI_Workshop/GitLab_CI/README.md) 🛠️
 - [Azure DevOps](CI_Workshop/Azure_DevOps/README.md) 🚀
 
