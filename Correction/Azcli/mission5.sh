@@ -24,12 +24,12 @@ az aks nodepool add --cluster-name MarsAKSCluster --resource-group MarsAks_RG --
 
 az aks get-credentials --resource-group MarsAks_RG --name MarsAKSCluster
 
-------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
 
-az aks show --resource-group MarsAks_RG --name MarsAKSCluster --query name -o tsv
+# az aks show --resource-group MarsAks_RG --name MarsAKSCluster --query name -o tsv
 
-------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
 
-az aks show --resource-group MarsAks_RG --name MarsAKSCluster --query "kubeConfig" -o tsv
+# az aks show --resource-group MarsAks_RG --name MarsAKSCluster --query "kubeConfig" -o tsv
 
 

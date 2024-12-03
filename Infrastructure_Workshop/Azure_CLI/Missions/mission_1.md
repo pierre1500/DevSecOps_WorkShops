@@ -180,63 +180,8 @@ Before proceeding to the next step:
 - Review the NSG rules to ensure they align with your security requirements.
 - Confirm that only authorized IP ranges are allowed access.
 
----
 
-### **Step 4: Enable Network Monitoring**
-
-**Objective:** Implement monitoring solutions to detect anomalous behaviors on the network and ensure rapid response in case of issues.
-
----
-
-### **Details:**
-
-- **Integrate Azure Monitor** and **Azure Network Watcher** for real-time analytics.
-- **Configure alerts** for suspicious activities or changes in security rules.
-
-> **Mission Directive:** Ensure that monitoring solutions are deployed and configured correctly to facilitate early detection of potential threats.
-
----
-
-### **🛠️ Monitoring Configuration Task Brief**
-
-Attempt to enable network monitoring yourself using Azure CLI commands based on the details above. If you need guidance, reveal the solution by expanding the section below.
-
-<details>
-  <summary>🚀 Monitoring Configuration Solution for Step 4</summary>
-
-1. **Create a Log Analytics Workspace:** This workspace will be used to collect and analyze monitoring data.
-
-   ```bash
-   az monitor log-analytics workspace create --resource-group EarthCommand_RG --workspace-name EarthMars_Workspace --location centralus
-   ```
-
-2. **Enable Azure Network Watcher:** This service will help monitor and diagnose network issues.
-
-   ```bash
-   az network watcher create --resource-group EarthCommand_RG --location centralus
-   ```
-
-3. **Set Up Alerts for Suspicious Activities:** Create an alert rule for specific metrics or logs.
-   ```bash
-   az monitor metrics alert create --resource-group EarthCommand_RG --name HighCPUAlert --scopes <VM_ID> --condition "avg Percentage CPU > 80" --description "Alert when CPU exceeds 80%" --action <ActionGroup_ID> --window-size 5m --evaluation-frequency 1m
-   ```
-
-> **Note:** Replace `<VM_ID>` and `<ActionGroup_ID>` with the appropriate IDs for your resources and action group.
-
-</details>
-
----
-
-### **🔒 Security Checkpoint**
-
-Before moving to the next step:
-
-- Verify that the **monitoring solutions** are correctly integrated and collecting data.
-- Ensure alerts are configured to notify
-
----
-
-### **Step 5: Deploy the Virtual Machine (VM)**
+### **Step 4: Deploy the Virtual Machine (VM)**
 
 **Objective:** The final step in establishing a secure network infrastructure is to deploy a **Virtual Machine (VM)** that will serve as a management server for Earth operations. This VM will handle critical applications and processes needed for Earth-Mars communications.
 
