@@ -49,7 +49,7 @@ In Mission 5, we enhance the Mars Data Systems infrastructure by deploying an **
 
 ## **Step 2: Define Virtual Network and Subnet for AKS Communication**
 
-**Objective:** Create a **Virtual Network** and **Subnet** to provide network isolation and connectivity for the Mars AKS cluster.
+**Objective:** Create a **Virtual Network** and **Subnet** to provide network isolation and connectivity for the Mars AKS cluster for the new resource group 
 
 #### Terraform Configuration:
 
@@ -89,37 +89,44 @@ resource "azurerm_subnet" "aks_subnet" {
     dns_prefix          = "marsaks"
 
     default_node_pool {
-        name           = "primary"
-        node_count     = 3
-        vm_size        = "Standard_DS3_v2"
-        vnet_subnet_id = azurerm_subnet.aks_subnet.id
-        min_count      = 2
-        max_count      = 5
+      name           = "primary"
+      node_count     = 3
+      vm_size        = "Standard_DS3_v2"
+      vnet_subnet_id = azurerm_subnet.aks_subnet.id
     }
 
     lifecycle {
-        ignore_changes = [default_node_pool.0.node_count]
+      ignore_changes = [default_node_pool.0.node_count]
     }
 
-    identity {
-        type = "SystemAssigned"
+    service_principal {
+      client_id     = var.appId
+      client_secret = var.password
     }
 
     network_profile {
-        network_plugin    = "azure"
-        network_policy    = "azure"
-        load_balancer_sku = "standard"
+      network_plugin    = "azure"
+      network_policy    = "azure"
+      load_balancer_sku = "standard"
     }
 
     tags = {
-        project = "Phoenix Mission Mars"
-        owner   = "Maxime Gaspard"
-    }
+      asset_owner              = var.email
+      asset_project_desc       = "Phoenix Mission mars"
+      asset_project_start      = "2024-10-16"
+      asset_project_end        = "2025-12-31"
+      availability1            = 1
+      availability2            = 15
+      maintenance1             = "monday"
+      maintenance2             = "friday"
+      shutdownaftermaintenance = "no"
+      barcode                  = var.barcode
+      autostart                = "no"
+      Auto-shutdown            = "no"
+      autoshutdown             = "no"
     }
     ```
 </details>
-
-
 
 ## **Step 4: Define Log Analytics Workspace for AKS Monitoring**
 
@@ -132,17 +139,36 @@ resource "azurerm_subnet" "aks_subnet" {
     <summary>Correction below </summary>
     ```hcl
     resource "azurerm_log_analytics_workspace" "mars_workspace" {
-    name                = "MarsAKSLogWorkspace"
-    location            = azurerm_resource_group.aks_rg_mars.location
-    resource_group_name = azurerm_resource_group.aks_rg_mars.name
-    sku                 = "PerGB2018"
-    tags = {
-        project = "Phoenix Mission Mars"
-        owner   = "Maxime Gaspard"
+      name                = "MarsAKSLogWorkspace"
+      location            = azurerm_resource_group.aks_rg_mars.location
+      resource_group_name = azurerm_resource_group.aks_rg_mars.name
+      sku                 = "PerGB2018"
     }
-    }
+  }
     ```
-
 </details>
+
+## **Step 5: Define Log Analytics Workspace for AKS Monitoring**
+
+**Objective:** Deploy an **azurerm_kubernetes_cluster_node_pool** 
+for the kubernetes cluster. You have to create this with the minimum configuration for the cluster.
+
+<details>
+  <summary>Correction below</summary>
+  ```hcl
+  resource "azurerm_kubernetes_cluster_node_pool" "batch_pool" {
+  name                  = "batchpool"
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.mars_aks_cluster.id
+  vm_size               = "Standard_DS2_v2"
+  node_count            = 1
+    node_labels = {
+      "purpose" = "batch-jobs"
+    }
+  }
+  ```
+</details>
+
+
+
 
 

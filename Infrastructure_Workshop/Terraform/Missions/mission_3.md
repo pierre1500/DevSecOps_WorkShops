@@ -35,20 +35,20 @@ Mission 3 builds upon the existing Mars Data Systems by introducing a dedicated 
 <details>
   <summary>🔍 Explanation</summary>
 
-    ```hcl
-    resource "azurerm_key_vault" "mars_key_vault" {
-      name                = "MarsKeyVault"
-      location            = azurerm_resource_group.mars_command_rg.location
-      resource_group_name = azurerm_resource_group.mars_command_rg.name
-      sku_name            = "standard"
-      tenant_id           = var.tenant_id
-      tags = {
-        asset_owner        = "NAME SURNAME"
-        asset_project_desc = "Phoenix Mission mars"
-        asset_project_end  = "2025-12-31"
-      }
-    }
-    ```
+```hcl
+resource "azurerm_key_vault" "mars_key_vault" {
+  name                = "MarsKeyVault"
+  location            = azurerm_resource_group.mars_command_rg.location
+  resource_group_name = azurerm_resource_group.mars_command_rg.name
+  sku_name            = "standard"
+  tenant_id           = var.tenant_id
+  tags = {
+    asset_owner        = "NAME SURNAME"
+    asset_project_desc = "Phoenix Mission mars"
+    asset_project_end  = "2025-12-31"
+  }
+}
+```
 
 </details>
 
@@ -70,14 +70,14 @@ Mission 3 builds upon the existing Mars Data Systems by introducing a dedicated 
 <details>
   <summary>🔍 Explanation</summary>
 
-    ```hcl
-        resource "azurerm_key_vault_secret" "sql_admin_password" {
-        name         = "sql-admin-password"
-        value        = var.sql_admin_password
-        key_vault_id = azurerm_key_vault.mars_key_vault.id
-        }
+```hcl
+    resource "azurerm_key_vault_secret" "sql_admin_password" {
+    name         = "sql-admin-password"
+    value        = var.sql_admin_password
+    key_vault_id = azurerm_key_vault.mars_key_vault.id
+    }
 
-    ```
+```
 
 </details>
 
@@ -105,18 +105,18 @@ Before proceeding:
 
 - **Log Analytics Workspace**:
 
-```hcl
-resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_key_vault" {
-name                       = "MarsDataMonitor"
-target_resource_id         = azurerm_key_vault.mars_key_vault.id
-log_analytics_workspace_id = azurerm_log_analytics_workspace.mars_log_analytics.id
+  ```hcl
+  resource "azurerm_monitor_diagnostic_setting" "mars_data_monitor_key_vault" {
+    name                       = "MarsDataMonitor"
+    target_resource_id         = azurerm_key_vault.mars_key_vault.id
+    log_analytics_workspace_id = azurerm_log_analytics_workspace.mars_log_analytics.id
 
-metric {
-  category = "AllMetrics"
-  enabled  = true
-}
-}
-```
+    metric {
+      category = "AllMetrics"
+      enabled  = true
+    }
+  }
+  ```
 
 </details>
 
@@ -129,6 +129,3 @@ Before concluding the mission:
 - Verify that diagnostics for Key Vault are active and logs are accessible in the Log Analytics workspace.
 - Confirm that monitoring captures access attempts and alerts administrators to any suspicious activity.
 
-```
-
-```
