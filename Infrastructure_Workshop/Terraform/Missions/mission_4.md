@@ -18,15 +18,16 @@ Building key vault store for the Mars infrastruscture
 - **Sku** Put the right Pricing Tier
 
 <details>
-    <summary>Show the solution</summary>
-    ```hcl
-    resource "azurerm_recovery_services_vault" "mars_backup_vault" {
-        name                = "MarsBackupVault"
-        location            = azurerm_resource_group.mars_command_rg.location
-        resource_group_name = azurerm_resource_group.mars_command_rg.name
-        sku                 = "Standard"
-    }
-    ```
+   <summary>Show the solution</summary>
+   
+```hcl
+resource "azurerm_recovery_services_vault" "mars_backup_vault" {
+name                = "MarsBackupVault"
+location            = azurerm_resource_group.mars_command_rg.location
+resource_group_name = azurerm_resource_group.mars_command_rg.name
+sku                 = "Standard"
+}
+```
 </details>
 
 ## **Step 2: Deploy the azurerm backup policy vm for our a virtual machine**
@@ -36,9 +37,10 @@ Building key vault store for the Mars infrastruscture
 - **You have to deploy a backup policy and protected backup for the vm we created on mission 1. You have to make a backup every day a 12.00 with a retention of 7 days**
 
 <details>
-    <summary>Show the solution</summary>
-    ```hcl
-    resource "azurerm_backup_policy_vm" "mars_backup_policy" {
+  <summary>Show the solution</summary>
+
+```hcl
+resource "azurerm_backup_policy_vm" "mars_backup_policy" {
     name                = "MarsVMBackupPolicy"
     resource_group_name = azurerm_resource_group.mars_command_rg.name
     recovery_vault_name = azurerm_recovery_services_vault.mars_backup_vault.name
@@ -50,14 +52,20 @@ Building key vault store for the Mars infrastruscture
     retention_daily {
         count = 7
     }
-    }
+}
 
-    resource "azurerm_backup_protected_vm" "mars_vm_backup" {
+resource "azurerm_backup_protected_vm" "mars_vm_backup" {
     resource_group_name       = azurerm_resource_group.mars_command_rg.name
     recovery_vault_name       = azurerm_recovery_services_vault.mars_backup_vault.name
     source_vm_id              = azurerm_linux_virtual_machine.mars_vm.id
     backup_policy_id          = azurerm_backup_policy_vm.mars_backup_policy.id
-    }
-    ```
+}
+```
 
 </details>
+
+---
+
+## The end
+
+You arrived at the end of the workshops, tell us more about your feelings on Terraform. Please share with your partner.

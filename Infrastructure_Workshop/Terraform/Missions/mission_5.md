@@ -55,23 +55,26 @@ In Mission 5, we enhance the Mars Data Systems infrastructure by deploying an **
 
 <details>
     <summary>Correction below </summary>
+
+  ```hcl
+  resource "azurerm_virtual_network" "aks_vnet" {
+    name                = "MarsAksVNet"
+    address_space       = ["10.1.0.0/16"]
+    location            = azurerm_resource_group.aks_rg_mars.location
+    resource_group_name = azurerm_resource_group.aks_rg_mars.name
+  }
+
+  resource "azurerm_subnet" "aks_subnet" {
+    name                 = "MarsAksSubnet"
+    resource_group_name  = azurerm_resource_group.aks_rg_mars.name
+    virtual_network_name = azurerm_virtual_network.aks_vnet.name
+    address_prefixes     = ["10.1.1.0/24"]
+  }
+  ```
+
 </details>
 
-```hcl
-resource "azurerm_virtual_network" "aks_vnet" {
-  name                = "MarsAksVNet"
-  address_space       = ["10.1.0.0/16"]
-  location            = azurerm_resource_group.aks_rg_mars.location
-  resource_group_name = azurerm_resource_group.aks_rg_mars.name
-}
 
-resource "azurerm_subnet" "aks_subnet" {
-  name                 = "MarsAksSubnet"
-  resource_group_name  = azurerm_resource_group.aks_rg_mars.name
-  virtual_network_name = azurerm_virtual_network.aks_vnet.name
-  address_prefixes     = ["10.1.1.0/24"]
-}
-```
 
 ## **Step 3: Define AKS Cluster for Mars Operations**
 
@@ -151,7 +154,7 @@ resource "azurerm_subnet" "aks_subnet" {
 ## **Step 5: Define Log Analytics Workspace for AKS Monitoring**
 
 **Objective:** Deploy an **azurerm_kubernetes_cluster_node_pool** 
-for the kubernetes cluster. You have to create this with the minimum configuration for the cluster.
+for the kubernetes cluster. You have to create this with the minimum configuration for the cluster with node pool count = 1
 
 <details>
   <summary>Correction below</summary>

@@ -76,7 +76,6 @@ resource "azurerm_key_vault" "mars_key_vault" {
     value        = var.sql_admin_password
     key_vault_id = azurerm_key_vault.mars_key_vault.id
     }
-
 ```
 
 </details>
@@ -128,4 +127,3 @@ Before concluding the mission:
 
 - Verify that diagnostics for Key Vault are active and logs are accessible in the Log Analytics workspace.
 - Confirm that monitoring captures access attempts and alerts administrators to any suspicious activity.
-
