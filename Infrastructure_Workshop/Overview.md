@@ -9,12 +9,37 @@
 
 As members of the **DevSecOps Task Force**, you will be divided into two specialized teams: **Team Terraform** and **Team Azure**. Each team faces a series of challenges that will test your skills, ingenuity, and teamwork in a high-pressure environment.
 
-### **☁️ Team Azure: Guardians of the Cloud ☁️**
-**Your Mission:** As protectors of interplanetary communication, your team will oversee the seamless exchange of information between Earth and Mars.
+# **☁️ Team Azure: Guardians of the Cloud ☁️**
 
-- **Forge the Path for Secure Communications:** Design an impenetrable architecture that facilitates safe data flow between the two worlds.
-- **Deploy the Watchful Eyes:** Implement monitoring and security solutions to detect and neutralize potential intrusions before they escalate.
-- **Ensure Harmony Across the Cosmos:** Maintain flawless operations that allow both planets to work in unison.
+## **🌌 Your Mission:**
+As protectors of interplanetary communication, your team is tasked with ensuring the seamless and secure exchange of data between Earth and Mars. 
+
+Your objectives are clear:
+
+---
+
+### **Forge the Path for Secure Communications**
+Design a resilient and impenetrable architecture that facilitates the safe flow of critical data between Earth and Mars. Achieve this by:
+- Deploying secure Azure SQL databases.
+- Configuring private endpoints and DNS zones to ensure isolation and confidentiality of communication.
+
+---
+
+### **Deploy the Watchful Eyes**
+Implement monitoring and security solutions to detect, neutralize, and respond to potential threats before they compromise operations:
+- Leverage Azure Log Analytics to oversee resource activity.
+- Integrate diagnostics with Azure Monitor for real-time alerting and insights.
+
+---
+
+### **Ensure Harmony Across the Cosmos**
+Maintain flawless operations by constructing robust and scalable systems that support collaboration between planets. This will include:
+- Backing up critical resources to ensure data resilience.
+- Deploying AKS clusters to support distributed workloads across Earth and Mars.
+
+---
+
+With your expertise, interplanetary communication will not just be possible—it will thrive. 🚀
 
 ### **🛠️ Team Terraform: The Infrastructure Engineers of Mars 🏗️**
 **Your Mission:** As the architects of Martian infrastructure, your team will create a resilient and secure foundation for the colony. 
