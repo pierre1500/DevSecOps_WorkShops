@@ -41,8 +41,8 @@ Maintain flawless operations by constructing robust and scalable systems that su
 
 With your expertise, interplanetary communication will not just be possible—it will thrive. 🚀
 
-### **🛠️ Team Terraform: The Infrastructure Engineers of Mars 🏗️**
-**Your Mission:** As the architects of Martian infrastructure, your team will create a resilient and secure foundation for the colony. 
+# **🛠️ Team Terraform: The Infrastructure Engineers of Mars 🏗️**
+## **Your Mission:** As the architects of Martian infrastructure, your team will create a resilient and secure foundation for the colony.
 
 - **Construct the Backbone of the Colony:** Build IaaS/PaaS systems that can withstand the harsh Martian environment and the test of time.
 - **Defend Against the Dark Arts of Cybersecurity:** Implement robust security measures to thwart simulated cyber threats lurking in the shadows.
