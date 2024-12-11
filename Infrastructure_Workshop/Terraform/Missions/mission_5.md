@@ -70,7 +70,7 @@ In Mission 5, we enhance the Mars Data Systems infrastructure by deploying an **
     virtual_network_name = azurerm_virtual_network.aks_vnet.name
     address_prefixes     = ["10.1.1.0/24"]
   }
-  ```
+```
 
 </details>
 
@@ -84,51 +84,53 @@ In Mission 5, we enhance the Mars Data Systems infrastructure by deploying an **
 
 <details>
     <summary>Correction below </summary>
-    ```hcl
-    resource "azurerm_kubernetes_cluster" "mars_aks_cluster" {
-    name                = "MarsAKSCluster"
-    location            = azurerm_resource_group.aks_rg_mars.location
-    resource_group_name = azurerm_resource_group.aks_rg_mars.name
-    dns_prefix          = "marsaks"
 
-    default_node_pool {
-      name           = "primary"
-      node_count     = 3
-      vm_size        = "Standard_DS3_v2"
-      vnet_subnet_id = azurerm_subnet.aks_subnet.id
-    }
+  ```hcl
+      resource "azurerm_kubernetes_cluster" "mars_aks_cluster" {
+      name                = "MarsAKSCluster"
+      location            = azurerm_resource_group.aks_rg_mars.location
+      resource_group_name = azurerm_resource_group.aks_rg_mars.name
+      dns_prefix          = "marsaks"
 
-    lifecycle {
-      ignore_changes = [default_node_pool.0.node_count]
-    }
+      default_node_pool {
+        name           = "primary"
+        node_count     = 3
+        vm_size        = "Standard_DS3_v2"
+        vnet_subnet_id = azurerm_subnet.aks_subnet.id
+      }
 
-    service_principal {
-      client_id     = var.appId
-      client_secret = var.password
-    }
+      lifecycle {
+        ignore_changes = [default_node_pool.0.node_count]
+      }
 
-    network_profile {
-      network_plugin    = "azure"
-      network_policy    = "azure"
-      load_balancer_sku = "standard"
-    }
+      service_principal {
+        client_id     = var.appId
+        client_secret = var.password
+      }
 
-    tags = {
-      asset_owner              = var.email
-      asset_project_desc       = "Phoenix Mission mars"
-      asset_project_start      = "2024-10-16"
-      asset_project_end        = "2025-12-31"
-      availability1            = 1
-      availability2            = 15
-      maintenance1             = "monday"
-      maintenance2             = "friday"
-      shutdownaftermaintenance = "no"
-      barcode                  = var.barcode
-      autostart                = "no"
-      Auto-shutdown            = "no"
-      autoshutdown             = "no"
-    }
-    ```
+      network_profile {
+        network_plugin    = "azure"
+        network_policy    = "azure"
+        load_balancer_sku = "standard"
+      }
+
+      tags = {
+        asset_owner              = var.email
+        asset_project_desc       = "Phoenix Mission mars"
+        asset_project_start      = "2024-10-16"
+        asset_project_end        = "2025-12-31"
+        availability1            = 1
+        availability2            = 15
+        maintenance1             = "monday"
+        maintenance2             = "friday"
+        shutdownaftermaintenance = "no"
+        barcode                  = var.barcode
+        autostart                = "no"
+        Auto-shutdown            = "no"
+        autoshutdown             = "no"
+      }
+  ```
+
 </details>
 
 ## **Step 4: Define Log Analytics Workspace for AKS Monitoring**
@@ -139,8 +141,9 @@ In Mission 5, we enhance the Mars Data Systems infrastructure by deploying an **
 
 
 <details>
-    <summary>Correction below </summary>
-    ```hcl
+  <summary>Correction below </summary>
+
+  ```hcl
     resource "azurerm_log_analytics_workspace" "mars_workspace" {
       name                = "MarsAKSLogWorkspace"
       location            = azurerm_resource_group.aks_rg_mars.location
@@ -148,7 +151,7 @@ In Mission 5, we enhance the Mars Data Systems infrastructure by deploying an **
       sku                 = "PerGB2018"
     }
   }
-    ```
+  ```
 </details>
 
 ## **Step 5: Define Log Analytics Workspace for AKS Monitoring**
@@ -158,6 +161,7 @@ for the kubernetes cluster. You have to create this with the minimum configurati
 
 <details>
   <summary>Correction below</summary>
+  
   ```hcl
   resource "azurerm_kubernetes_cluster_node_pool" "batch_pool" {
   name                  = "batchpool"
