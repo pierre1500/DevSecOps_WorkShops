@@ -143,4 +143,4 @@ az aks show --resource-group MarsAks_RG --name MarsAKSCluster --query "kubeConfi
 ### **🎖️ Mission Debrief**
 With the AKS cluster successfully deployed and configured, you have ensured that the Phoenix Mission to Mars is supported with scalable infrastructure and monitoring capabilities. The next phase will involve scaling the cluster and deploying applications to Mars.
 
-🚀 **Next Steps:** Continue with **[Mission_6.md](Mission_6.md)** to tackle new challenges on Mars.
+🚀 **Next Steps:** Continue with **[mission_6.md](Mission_6.md)** to tackle new challenges on Mars.

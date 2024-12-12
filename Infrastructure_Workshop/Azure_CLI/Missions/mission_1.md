@@ -167,4 +167,4 @@ az network public-ip show --name EarthVM_PublicIP --resource-group EarthCommand_
 
 Once you've completed all exercises, you will have established a secure, functional infrastructure for Earth Command. This foundation will support future missions and pave the way for the success of the Phoenix Mission.
 
-🚀 **Next Steps:** Proceed to **[Mission_2.md](Mission_2.md)** to continue your training and face new challenges.
+🚀 **Next Steps:** Proceed to **[Mission_2.md](mission_2.md)** to continue your training and face new challenges.

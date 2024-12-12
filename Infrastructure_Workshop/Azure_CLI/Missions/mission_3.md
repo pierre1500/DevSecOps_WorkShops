@@ -102,4 +102,4 @@ az monitor diagnostic-settings create --name EarthDataMonitorSQL --resource "$(a
 ### **🎖️ Mission Debrief**
 With the Key Vault and monitoring configurations now in place, Earth Command is well-equipped to securely manage sensitive information and track the health of its critical resources. This will help ensure the smooth running of operations as the Phoenix Mission progresses.
 
-🚀 **Next Steps:** Proceed to **[Mission_4.md](Mission_4.md)** to continue your training and tackle further challenges.
+🚀 **Next Steps:** Proceed to **[Mission_4.md](mission_4.md)** to continue your training and tackle further challenges.
