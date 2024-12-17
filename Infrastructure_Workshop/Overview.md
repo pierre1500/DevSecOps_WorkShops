@@ -9,21 +9,69 @@
 
 As members of the **DevSecOps Task Force**, you will be divided into two specialized teams: **Team Terraform** and **Team Azure**. Each team faces a series of challenges that will test your skills, ingenuity, and teamwork in a high-pressure environment.
 
-### **☁️ Team Azure: Guardians of the Cloud ☁️**
-**Your Mission:** As protectors of interplanetary communication, your team will oversee the seamless exchange of information between Earth and Mars.
+# **☁️ Team Azure: Guardians of the Cloud ☁️**
 
-- **Forge the Path for Secure Communications:** Design an impenetrable architecture that facilitates safe data flow between the two worlds.
-- **Deploy the Watchful Eyes:** Implement monitoring and security solutions to detect and neutralize potential intrusions before they escalate.
-- **Ensure Harmony Across the Cosmos:** Maintain flawless operations that allow both planets to work in unison.
+## **🌌 Your Mission:**
+As protectors of interplanetary communication, your team is tasked with ensuring the seamless and secure exchange of data between Earth and Mars. 
 
-### **🛠️ Team Terraform: The Infrastructure Engineers of Mars 🏗️**
-**Your Mission:** As the architects of Martian infrastructure, your team will create a resilient and secure foundation for the colony. 
+Your objectives are clear:
 
-- **Construct the Backbone of the Colony:** Build IaaS/PaaS systems that can withstand the harsh Martian environment and the test of time.
-- **Defend Against the Dark Arts of Cybersecurity:** Implement robust security measures to thwart simulated cyber threats lurking in the shadows.
-- **Empower Life on Mars:** Ensure that your systems support vital operations, from life support to communications.
+---
 
-Prepare to don your helmets and step into the role of essential operatives in **Mission Phoenix**. Your skills and collaboration will be paramount as you navigate this thrilling quest for the future of humankind on Mars! 🌌🛰️
+### **Forge the Path for Secure Communications**
+Design a resilient and impenetrable architecture that facilitates the safe flow of critical data between Earth and Mars. Achieve this by:
+- Deploying secure Azure SQL databases.
+- Configuring private endpoints and DNS zones to ensure isolation and confidentiality of communication.
+
+---
+
+### **Deploy the Watchful Eyes**
+Implement monitoring and security solutions to detect, neutralize, and respond to potential threats before they compromise operations:
+- Leverage Azure Log Analytics to oversee resource activity.
+- Integrate diagnostics with Azure Monitor for real-time alerting and insights.
+
+---
+
+### **Ensure Harmony Across the Cosmos**
+Maintain flawless operations by constructing robust and scalable systems that support collaboration between planets. This will include:
+- Backing up critical resources to ensure data resilience.
+- Deploying AKS clusters to support distributed workloads across Earth and Mars.
+
+---
+
+With your expertise, interplanetary communication will not just be possible—it will thrive. 🚀
+
+# **🛠️ Team Terraform: Builders of the Martian Foundation 🏗️**
+
+## **🌌 Your Mission:**
+As the architects of Martian infrastructure, your team is entrusted with creating a resilient, scalable, and secure foundation for the colony. 
+
+Your objectives are clear:
+
+---
+
+### **Construct the Backbone of the Colony**
+Design and deploy infrastructure systems that will withstand the harsh Martian environment and support the colony’s long-term survival. Achieve this by:
+- Using Terraform to deploy IaaS and PaaS solutions that scale and are resilient to environmental challenges.
+- Implementing automated provisioning for efficient and consistent infrastructure management.
+
+---
+
+### **Defend Against the Dark Arts of Cybersecurity**
+Build robust security measures to safeguard Martian systems from simulated cyber threats. This includes:
+- Enabling encryption and secure access control to ensure the integrity of systems and data.
+- Configuring network isolation and protection from external threats using Terraform-managed firewalls and security groups.
+
+---
+
+### **Empower Life on Mars**
+Ensure that your systems support vital operations such as life support, energy distribution, and communication with Earth. This will include:
+- Deploying highly available and redundant resources to ensure continuous operation.
+- Automating scaling and fault tolerance to handle unexpected events and demands.
+
+---
+
+With your expertise in Terraform, you will lay the foundation for a thriving Martian colony. Your work will ensure that the systems, infrastructure, and security measures are not only resilient to the Martian environment but also capable of supporting human life and collaboration with Earth. 🚀🌌
 
 ---
 

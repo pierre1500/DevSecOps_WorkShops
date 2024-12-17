@@ -13,6 +13,7 @@ In this mission, you will complete a series of critical steps to establish Earth
 ### **Step 1: Deploy the Resource Group – Foundation of Earth’s Operations**
 
 ## **Objectives**
+
 - Create and configure the resource group for the mission.
 - Set up a virtual network and subnets for communication.
 - Implement robust security measures using Network Security Groups (NSGs).
@@ -177,6 +178,7 @@ az vm create --name EarthVM --resource-group EarthCommand_RG --location francece
 ---
 
 #### **Exercise 6: Retrieve Public IP Address**
+
 Verify the public IP address of the deployed VM to confirm external access capabilities.
 
 <details>
@@ -191,6 +193,7 @@ az network public-ip show --name EarthVM_PublicIP --resource-group EarthCommand_
 ---
 
 ### **🎖️ Mission Debrief**
+
 Once you've completed all exercises, you will have established a secure, functional infrastructure for Earth Command. This foundation will support future missions and pave the way for the success of the Phoenix Mission.
 
 🚀 **Next Steps:** Proceed to **[Mission_2.md](mission_2.md)** to continue your training and face new challenges.

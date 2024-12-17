@@ -45,10 +45,6 @@ resource "azurerm_kubernetes_cluster" "mars_aks_cluster" {
     client_secret = var.password
   }
 
-  #   identity {
-  #     type = "SystemAssigned"
-  #   }
-
   network_profile {
     network_plugin    = "azure"
     network_policy    = "azure"
@@ -71,8 +67,7 @@ resource "azurerm_kubernetes_cluster" "mars_aks_cluster" {
     autoshutdown             = "no"
   }
 }
-
-# analytics 
+ 
 resource "azurerm_log_analytics_workspace" "mars_workspace" {
   name                = "MarsAKSLogWorkspace"
   location            = azurerm_resource_group.aks_rg_mars.location
