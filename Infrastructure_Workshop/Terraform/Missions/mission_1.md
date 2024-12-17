@@ -230,5 +230,93 @@ resource "azurerm_subnet" "private_subnet" {
   address_prefixes     = ["10.1.2.0/24"]
 }
 ```
-
 </details>
+
+## Step 6: Create Virtual Machine (Mars VM)
+
+**Objective**: Deploy a Linux virtual machine (VM) in the secure network infrastructure to support Mars communication.
+
+**Details**:
+
+- **VM Name**: MarsVM
+- **Location**: Same as the Mars resource group
+- **Network Interface**: Connect the VM to the previously created subnets
+- **Tags**: Add metadata to the VM to track project details and maintenance parameters:
+  - `asset_owner`: The email address of the asset owner (`var.email`)
+  - `asset_project_desc`: "Phoenix Mission mars"
+  - `asset_project_start`: "start"
+  - `asset_project_end`: "end"
+  - `availability1`: `1`
+  - `availability2`: `15`
+  - `maintenance1`: "monday"
+  - `maintenance2`: "friday"
+  - `shutdownaftermaintenance`: "no"
+  - `barcode`: The barcode value (`var.barcode`)
+  - `autostart`: "no"
+  - `Auto-shutdown`: "no"
+  - `autoshutdown`: "no"
+
+<details>
+  <summary>💻 Step 6 create virtual machine - Code </summary>
+
+  ```hcl
+  resource "azurerm_network_interface" "mars_vm_nic" {
+    name                = "MarsVM_NIC"
+    location            = azurerm_resource_group.mars_command_rg.location
+    resource_group_name = azurerm_resource_group.mars_command_rg.name
+
+    ip_configuration {
+      name                          = "MarsVM_NIC_Config"
+      subnet_id                     = azurerm_subnet.private_subnet.id
+      private_ip_address_allocation = "Dynamic"
+    }
+  }
+
+  resource "azurerm_linux_virtual_machine" "mars_vm" {
+    name                  = "MarsVM"
+    location              = azurerm_resource_group.mars_command_rg.location
+    resource_group_name   = azurerm_resource_group.mars_command_rg.name
+    network_interface_ids = [azurerm_network_interface.mars_vm_nic.id]
+    size                  = "Standard_B2ms"
+
+    admin_username                  = "ubuntuadmin"
+    disable_password_authentication = false
+    admin_password                  = var.vm_password_admin
+
+    source_image_reference {
+      publisher = "Canonical"
+      offer     = "UbuntuServer"
+      sku       = "18.04-LTS"
+      version   = "latest"
+    }
+
+    identity {
+      type = "SystemAssigned"
+    }
+
+    os_disk {
+      name                 = "MarsVM_OSDisk"
+      caching              = "ReadWrite"
+      storage_account_type = "Standard_LRS"
+    }
+
+    tags = {
+      asset_owner              = var.email
+      asset_project_desc       = "Phoenix Mission mars"
+      asset_project_start      = "2024-10-16"
+      asset_project_end        = "2025-12-31"
+      availability1            = 1
+      availability2            = 15
+      maintenance1             = "monday"
+      maintenance2             = "friday"
+      shutdownaftermaintenance = "no"
+      barcode                  = var.barcode
+      autostart                = "no"
+      Auto-shutdown            = "no"
+      autoshutdown             = "no"
+    }
+  }
+  ```
+  
+</details>
+
