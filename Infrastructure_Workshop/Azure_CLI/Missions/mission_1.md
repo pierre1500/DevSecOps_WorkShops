@@ -23,7 +23,14 @@ In this mission, you will complete a series of critical steps to establish Earth
 ### **Exercises**
 
 #### **Exercise 1: Create the Resource Group**
-Your first step is to create a dedicated resource group for the mission. This will serve as the foundation for all subsequent operations.
+
+Create a dedicated resource group to organize all mission-related resources.  
+- The resource group must be named `EarthCommand_RG`.  
+- It should be deployed in the `francecentral` region.  
+- Use the following tags:  
+   - `asset_owner` : Your email address.  
+   - `asset_project_desc` : "Phoenix Mission earth".  
+   - `asset_project_end` : "2025-12-31".
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -37,7 +44,12 @@ az group create --name EarthCommand_RG --location francecentral --tags asset_own
 ---
 
 #### **Exercise 2: Deploy the Virtual Network**
-Set up a virtual network to establish communication channels for Earth Command.
+
+Set up a virtual network to establish communication channels for Earth Command.  
+- The virtual network must be named `EarthComm_Network`.  
+- It should be deployed in the existing resource group `EarthCommand_RG`.  
+- Use the `francecentral` location.  
+- Define the address space as `10.1.0.0/16`.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -51,9 +63,12 @@ az network vnet create --name EarthComm_Network --resource-group EarthCommand_RG
 ---
 
 #### **Exercise 3: Configure Network Security**
-To ensure the network is secure, create a Network Security Group and define rules for SSH, RDP, and outbound communication.
 
-**Step 1: Create NSG**
+To ensure the network is secure, create a **Network Security Group (NSG)** and define rules for SSH, RDP, and outbound communication.  
+
+**Step 1:** Create a Network Security Group named `Earth_NSG`.  
+- Use the existing resource group `EarthCommand_RG`.  
+- Deploy it in the `francecentral` location.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -102,9 +117,12 @@ az network nsg rule create --name Allow-All-Outbound --nsg-name Earth_NSG --reso
 ---
 
 #### **Exercise 4: Create Subnets**
-Divide the virtual network into public and private subnets.
 
-1. **Create Public Subnet:**
+Divide the virtual network `EarthComm_Network` into public and private subnets.  
+
+1. **Create the Public Subnet:**  
+   - Name: `Earth_PublicSubnet`  
+   - Address range: `10.1.1.0/24`  
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -116,6 +134,8 @@ az network vnet subnet create --name Earth_PublicSubnet --vnet-name EarthComm_Ne
 </details>
 
 2. **Create Private Subnet:**
+    - Name: `Earth_PrivateSubnet`
+    - Address range: `10.1.1.0/24`
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -129,7 +149,21 @@ az network vnet subnet create --name Earth_PrivateSubnet --vnet-name EarthComm_N
 ---
 
 #### **Exercise 5: Deploy the Virtual Machine**
-Deploy the Earth Command Virtual Machine (VM) and ensure it is ready for operations.
+
+Deploy the Earth Command Virtual Machine (VM) and ensure it is ready for operations.  
+
+- The VM should be named `EarthVM`.  
+- It should be deployed in the `EarthCommand_RG` resource group.  
+- Location: `francecentral`.  
+- Use the existing NIC `EarthVM_NIC`.  
+- VM size: `Standard_B2ms`.  
+- Image: `UbuntuLTS`.  
+- Set up an admin username `ubuntuadmin` and password `admin_password123`.  
+- Add appropriate tags:  
+  - `asset_owner`: your email address.  
+  - `asset_project_desc`: "Phoenix Mission earth".  
+  - `asset_project_start`: "2024-10-16".  
+  - `asset_project_end`: "2025-12-31".  
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -159,4 +193,4 @@ az network public-ip show --name EarthVM_PublicIP --resource-group EarthCommand_
 ### **🎖️ Mission Debrief**
 Once you've completed all exercises, you will have established a secure, functional infrastructure for Earth Command. This foundation will support future missions and pave the way for the success of the Phoenix Mission.
 
-🚀 **Next Steps:** Proceed to **[Mission_2.md](Mission_2.md)** to continue your training and face new challenges.
+🚀 **Next Steps:** Proceed to **[Mission_2.md](mission_2.md)** to continue your training and face new challenges.

@@ -15,7 +15,10 @@ In this mission, you are tasked with setting up backup and protection for critic
 ### **Exercises**
 
 #### **Exercise 1: Create a Backup Vault**
-Your first task is to create a backup vault to store backup data for Earth Command.
+
+Your first task is to create a backup vault to store backup data for Earth Command.  
+- Use the `az backup vault create` command to set up the vault.  
+- Replace the placeholders in the command with the appropriate values for your setup.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -29,7 +32,10 @@ az backup vault create --name EarthBackupVault --location francecentral --resour
 ---
 
 #### **Exercise 2: Create a Backup Policy**
-Next, create a backup policy for Earth Command's virtual machines. This policy will define the frequency and retention of backups.
+
+Next, create a backup policy for Earth Command's virtual machines. This policy will define the frequency and retention of backups.  
+- Use the `az backup policy create` command to set up the policy.  
+- Replace the placeholders with the appropriate values for your backup policy setup.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -43,7 +49,10 @@ az backup policy create --name EarthVMBackupPolicy --vault-name EarthBackupVault
 ---
 
 #### **Exercise 3: Enable Backup Protection for the VM**
-Finally, enable backup protection for the Earth Command virtual machine using the policy you just created.
+
+Finally, enable backup protection for the Earth Command virtual machine using the policy you just created.  
+- First, retrieve the VM ID using the `az vm show` command.
+- Then, use the `az backup protection enable-for-vm` command to enable backup protection for the virtual machine.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -61,4 +70,4 @@ az backup protection enable-for-vm --vault-name EarthBackupVault --resource-grou
 ### **🎖️ Mission Debrief**
 With backup protection successfully configured, Earth Command now has reliable protection in place to safeguard its virtual machines. Your efforts will help ensure that critical data remains secure and recoverable, even in the event of a disaster.
 
-🚀 **Next Steps:** Proceed to **[Mission_5.md](Mission_5.md)** to continue your training and tackle new challenges.
+🚀 **Next Steps:** Proceed to **[Mission_5.md](mission_5.md)** to continue your training and tackle new challenges.

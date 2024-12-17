@@ -16,7 +16,14 @@ As a crucial member of Earth Command, your mission is to implement security best
 ### **Exercises**
 
 #### **Exercise 1: Create the Key Vault**
-Your first task is to create a Key Vault for Earth Command, ensuring it is configured to store sensitive data securely.
+
+Your first task is to create a Key Vault for Earth Command, ensuring it is configured to store sensitive data securely.  
+- Create a Key Vault named `earthtestkvadminusetest2` in the `EarthCommand_RG` resource group.  
+- Set the location to `francecentral`.  
+- Enable soft-delete with a retention period of 90 days.  
+- Use the standard SKU for the Key Vault.  
+- Enable RBAC authorization and deployment, disk encryption, and template deployment.  
+- Add tags such as asset_owner and asset_project_desc.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -30,7 +37,10 @@ az keyvault create --name earthtestkvadminusetest2 --location francecentral --re
 ---
 
 #### **Exercise 2: Retrieve the Virtual Machine Principal ID**
-Now, retrieve the **principal ID** of the Earth Command VM to set access policies for it in the Key Vault.
+
+Now, retrieve the **principal ID** of the Earth Command VM to set access policies for it in the Key Vault.  
+- Use the `az vm show` command to fetch the `principalId` of the `EarthVM`.  
+- Store the result in the `vm_principal_id` variable for use in future Key Vault configuration.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -44,7 +54,11 @@ vm_principal_id=$(az vm show --name EarthVM --resource-group EarthCommand_RG --q
 ---
 
 #### **Exercise 3: Set Key Vault Access Policy**
-Set an access policy for the Earth Command VM to allow it to retrieve and list secrets stored in the Key Vault.
+
+Set an access policy for the Earth Command VM to allow it to retrieve and list secrets stored in the Key Vault.  
+- Use the `az keyvault set-policy` command to grant the VM's principal ID the `get` and `list` permissions for secrets.  
+- Replace the `<tenant_id>` placeholder with the actual tenant ID.  
+- Apply the policy to the `earthtestkvadminusetest2` Key Vault.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -58,8 +72,10 @@ az keyvault set-policy --name earthtestkvadminusetest2 --resource-group EarthCom
 ---
 
 #### **Exercise 4: Store SQL Admin Password in Key Vault**
-Next, store the SQL admin password in the Key Vault for secure retrieval by authorized entities.
 
+Next, store the SQL admin password in the Key Vault for secure retrieval by authorized entities.  
+- Use the `az keyvault secret set` command to store the `sql-admin-password` in the Key Vault.  
+- Replace the `<sql_admin_password>` placeholder with the actual SQL admin password.
 <details>
 <summary>💡 Show Solution</summary>
 
@@ -72,7 +88,10 @@ az keyvault secret set --vault-name earthtestkvadminusetest2 --name sql-admin-pa
 ---
 
 #### **Exercise 5: Enable Monitoring for Key Vault**
-Enable diagnostic settings to send monitoring data for your Key Vault to a Log Analytics workspace, ensuring that all key activities are tracked.
+
+Enable diagnostic settings to send monitoring data for your Key Vault to a Log Analytics workspace, ensuring that all key activities are tracked.  
+- Use the `az monitor diagnostic-settings create` command to enable monitoring for the Key Vault.  
+- Replace the placeholders in the command with the appropriate values for your setup.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -86,7 +105,10 @@ az monitor diagnostic-settings create --name EarthDataMonitorKeyVault --resource
 ---
 
 #### **Exercise 6: Enable Monitoring for SQL Database**
-Lastly, configure monitoring for the Earth Command SQL Database to ensure that its performance and health metrics are captured for analysis.
+
+Lastly, configure monitoring for the Earth Command SQL Database to ensure that its performance and health metrics are captured for analysis.  
+- Use the `az monitor diagnostic-settings create` command to enable monitoring for the SQL Database.  
+- Replace the placeholders in the command with the appropriate values for your setup.
 
 <details>
 <summary>💡 Show Solution</summary>
@@ -102,4 +124,4 @@ az monitor diagnostic-settings create --name EarthDataMonitorSQL --resource "$(a
 ### **🎖️ Mission Debrief**
 With the Key Vault and monitoring configurations now in place, Earth Command is well-equipped to securely manage sensitive information and track the health of its critical resources. This will help ensure the smooth running of operations as the Phoenix Mission progresses.
 
-🚀 **Next Steps:** Proceed to **[Mission_4.md](Mission_4.md)** to continue your training and tackle further challenges.
+🚀 **Next Steps:** Proceed to **[Mission_4.md](mission_4.md)** to continue your training and tackle further challenges.
