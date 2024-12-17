@@ -61,4 +61,4 @@ az backup protection enable-for-vm --vault-name EarthBackupVault --resource-grou
 ### **🎖️ Mission Debrief**
 With backup protection successfully configured, Earth Command now has reliable protection in place to safeguard its virtual machines. Your efforts will help ensure that critical data remains secure and recoverable, even in the event of a disaster.
 
-🚀 **Next Steps:** Proceed to **[Mission_5.md](Mission_5.md)** to continue your training and tackle new challenges.
+🚀 **Next Steps:** Proceed to **[mission_5.md](Mission_5.md)** to continue your training and tackle new challenges.

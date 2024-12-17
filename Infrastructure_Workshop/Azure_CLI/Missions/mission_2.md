@@ -116,4 +116,4 @@ az monitor diagnostic-settings create --name EarthDataMonitor --resource "$(az s
 ### **🎖️ Mission Debrief**
 With the database and monitoring infrastructure in place, Earth Command is now ready to handle and securely store mission-critical data. Your efforts ensure that the system will remain secure, resilient, and performant as the mission progresses.
 
-🚀 **Next Steps:** Proceed to **[Mission_3.md](Mission_3.md)** to continue your training and take on new challenges.
+🚀 **Next Steps:** Proceed to **[Mission_3.md](mission_3.md)** to continue your training and take on new challenges.
