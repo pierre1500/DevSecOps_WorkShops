@@ -10,6 +10,14 @@ In this mission, you will complete a series of critical steps to establish Earth
 
 ---
 
+## Technical Documentation References
+- [Azure Resource Groups Documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)
+- [Azure Virtual Networks Overview](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
+- [Network Security Groups Documentation](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview)
+- [Azure Virtual Machines Documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/)
+
+---
+
 ### **Step 1: Deploy the Resource Group – Foundation of Earth’s Operations**
 
 ## **Objectives**
@@ -189,6 +197,13 @@ az network public-ip show --name EarthVM_PublicIP --resource-group EarthCommand_
 ```
 
 </details>
+
+---
+
+## Additional Resources
+- [Azure CLI Command Reference](https://learn.microsoft.com/en-us/cli/azure/reference-index)
+- [Azure VM Sizes Guide](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes)
+- [Azure Security Best Practices](https://learn.microsoft.com/en-us/azure/security/fundamentals/best-practices-and-patterns)
 
 ---
 

@@ -13,6 +13,17 @@ As a crucial member of Earth Command, your mission is to implement security best
 
 ---
 
+## Technical Documentation References
+- [Azure Key Vault Overview](https://learn.microsoft.com/en-us/azure/key-vault/general/overview)
+- [Key Vault Access Policies](https://learn.microsoft.com/en-us/azure/key-vault/general/assign-access-policy)
+- [Key Vault Soft Delete](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview)
+- [Managed Identities Overview](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview)
+- [Azure Monitor Diagnostic Settings](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings)
+- [Key Vault Security Features](https://learn.microsoft.com/en-us/azure/key-vault/general/security-features)
+
+---
+
+
 ### **Exercises**
 
 #### **Exercise 1: Create the Key Vault**
@@ -118,6 +129,18 @@ az monitor diagnostic-settings create --name EarthDataMonitorSQL --resource "$(a
 ```
 
 </details>
+
+---
+
+## Additional Resources
+- [Azure Key Vault CLI Reference](https://learn.microsoft.com/en-us/cli/azure/keyvault)
+- [Key Vault Best Practices](https://learn.microsoft.com/en-us/azure/key-vault/general/best-practices)
+- [Key Vault Monitoring Guide](https://learn.microsoft.com/en-us/azure/key-vault/general/monitor-key-vault)
+- [Azure RBAC for Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide)
+- [Key Vault Secrets Management](https://learn.microsoft.com/en-us/azure/key-vault/secrets/about-secrets)
+- [Azure Monitor Metrics](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-supported)
+- [Key Vault Backup and Recovery](https://learn.microsoft.com/en-us/azure/key-vault/general/backup)
+- [Key Vault Security Baseline](https://learn.microsoft.com/en-us/security/benchmark/azure/baselines/key-vault-security-baseline)
 
 ---
 

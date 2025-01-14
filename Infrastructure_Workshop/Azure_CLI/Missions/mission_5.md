@@ -12,6 +12,16 @@ In this mission, you will deploy an Azure Kubernetes Service (AKS) cluster for t
 
 ---
 
+## Technical Documentation References
+- [Azure Kubernetes Service (AKS) Overview](https://learn.microsoft.com/en-us/azure/aks/intro-kubernetes)
+- [AKS Networking Concepts](https://learn.microsoft.com/en-us/azure/aks/concepts-network)
+- [AKS Security Concepts](https://learn.microsoft.com/en-us/azure/aks/concepts-security)
+- [AKS Node Pools Overview](https://learn.microsoft.com/en-us/azure/aks/use-multiple-node-pools)
+- [Azure CNI Networking in AKS](https://learn.microsoft.com/en-us/azure/aks/configure-azure-cni)
+- [AKS Monitoring with Azure Monitor](https://learn.microsoft.com/en-us/azure/aks/monitor-aks)
+
+---
+
 ### **Exercises**
 
 #### **Exercise 1: Create a Resource Group**
@@ -137,6 +147,19 @@ az aks show --resource-group MarsAks_RG --name MarsAKSCluster --query "kubeConfi
 ```
 
 </details>
+
+---
+
+## Additional Resources
+- [AKS CLI Reference](https://learn.microsoft.com/en-us/cli/azure/aks)
+- [AKS Best Practices](https://learn.microsoft.com/en-us/azure/aks/best-practices)
+- [Kubernetes Documentation](https://kubernetes.io/docs/home/)
+- [AKS Scaling Strategies](https://learn.microsoft.com/en-us/azure/aks/concepts-scale)
+- [AKS Storage Options](https://learn.microsoft.com/en-us/azure/aks/concepts-storage)
+- [AKS Cluster Upgrades](https://learn.microsoft.com/en-us/azure/aks/upgrade-cluster)
+- [AKS Troubleshooting Guide](https://learn.microsoft.com/en-us/azure/aks/troubleshooting)
+- [AKS Network Policies](https://learn.microsoft.com/en-us/azure/aks/use-network-policies)
+- [AKS Identity and Access Management](https://learn.microsoft.com/en-us/azure/aks/concepts-identity)
 
 ---
 

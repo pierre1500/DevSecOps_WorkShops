@@ -13,6 +13,16 @@ As a member of Earth Command, you are tasked with setting up the necessary datab
 
 ---
 
+## Technical Documentation References
+- [Azure SQL Database Overview](https://learn.microsoft.com/en-us/azure/azure-sql/database/sql-database-paas-overview)
+- [Azure SQL Security Overview](https://learn.microsoft.com/en-us/azure/azure-sql/database/security-overview)
+- [Azure Private DNS Documentation](https://learn.microsoft.com/en-us/azure/dns/private-dns-overview)
+- [Azure Private Link Overview](https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview)
+- [Log Analytics Workspace Documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview)
+- [Azure Monitor Overview](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
+
+---
+
 ### **Exercises**
 
 #### **Exercise 1: Create the SQL Server**
@@ -143,6 +153,17 @@ az monitor diagnostic-settings create --name EarthDataMonitor --resource "$(az s
 ```
 
 </details>
+
+---
+
+## Additional Resources
+- [Azure SQL CLI Reference](https://learn.microsoft.com/en-us/cli/azure/sql)
+- [Azure Monitor CLI Reference](https://learn.microsoft.com/en-us/cli/azure/monitor)
+- [Azure SQL Database Best Practices](https://learn.microsoft.com/en-us/azure/azure-sql/database/performance-guidance)
+- [Azure SQL Firewall Configuration Guide](https://learn.microsoft.com/en-us/azure/azure-sql/database/firewall-configure)
+- [Azure SQL Private Link Configuration](https://learn.microsoft.com/en-us/azure/azure-sql/database/private-endpoint-overview)
+- [Azure SQL Troubleshooting Guide](https://learn.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-errors-issues)
+- [Azure SQL Database Security Best Practices](https://learn.microsoft.com/en-us/azure/azure-sql/database/security-best-practice)
 
 ---
 

@@ -12,6 +12,16 @@ In this mission, you are tasked with setting up backup and protection for critic
 
 ---
 
+## Technical Documentation References
+- [Azure Backup Overview](https://learn.microsoft.com/en-us/azure/backup/backup-overview)
+- [Azure Recovery Services Vault Overview](https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview)
+- [VM Backup Policy Architecture](https://learn.microsoft.com/en-us/azure/backup/backup-architecture)
+- [Azure VM Backup Overview](https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction)
+- [Backup Policy Management](https://learn.microsoft.com/en-us/azure/backup/backup-azure-manage-vms)
+- [Azure Backup Security Features](https://learn.microsoft.com/en-us/azure/backup/security-overview)
+
+---
+
 ### **Exercises**
 
 #### **Exercise 1: Create a Backup Vault**
@@ -64,6 +74,16 @@ az backup protection enable-for-vm --vault-name EarthBackupVault --resource-grou
 ```
 
 </details>
+
+---
+
+## Additional Resources
+- [Azure Backup CLI Reference](https://learn.microsoft.com/en-us/cli/azure/backup)
+- [Backup Monitoring and Reporting](https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-built-in-monitor)
+- [Backup Troubleshooting Guide](https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-troubleshoot)
+- [Azure Backup Pricing and Support](https://learn.microsoft.com/en-us/azure/backup/backup-support-matrix)
+- [Backup Encryption Guide](https://learn.microsoft.com/en-us/azure/backup/backup-encryption)
+- [Backup Disaster Recovery](https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms)
 
 ---
 
