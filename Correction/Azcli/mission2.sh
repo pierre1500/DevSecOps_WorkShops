@@ -1,4 +1,4 @@
-az sql server create --name earthqlserver2055 --resource-group EarthCommand_RG --location francecentral --admin-user azureuser --admin-password "strong sql password" --version 12.0
+az sql server create --name earthqlserver2055 --resource-group EarthCommand_RG --location francecentral --admin-user azureuser --admin-password "K9pLSvU$+K45"
 
 
 
@@ -14,7 +14,7 @@ az network private-dns zone create --name privatelink.database.windows.net --res
 
 
 
-az network private-endpoint create --name earth-private-endpoint --resource-group EarthCommand_RG --location francecentral --subnet Earth_PrivateSubnet --private-connection-resource-id "$(az sql server show --name earthqlserver2055 --resource-group EarthCommand_RG --query id -o tsv)" --connection-name database-connection --group-ids sqlServer
+az network private-endpoint create --name earth-private-endpoint --resource-group EarthCommand_RG --location francecentral --subnet Earth_PrivateSubnet --vnet-name EarthComm_Network  --private-connection-resource-id "$(az sql server show --name earthqlserver2055 --resource-group EarthCommand_RG --query id -o tsv)" --connection-name database-connection --group-ids sqlServer
 
 
 
@@ -23,3 +23,4 @@ az monitor log-analytics workspace create --name EarthLogAnalyticsWorkspace --re
 
 
 az monitor diagnostic-settings create --name EarthDataMonitor --resource "$(az sql db show --name earthqlserver2055 --server earthqlserver2055 --resource-group EarthCommand_RG --query id -o tsv)" --workspace "$(az monitor log-analytics workspace show --name EarthLogAnalyticsWorkspace --resource-group EarthCommand_RG --query id -o tsv)" --metrics '[{"category":"AllMetrics","enabled":true}]'
+ 

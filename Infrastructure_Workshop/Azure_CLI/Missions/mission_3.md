@@ -40,7 +40,7 @@ Your first task is to create a Key Vault for Earth Command, ensuring it is confi
 <summary>💡 Show Solution</summary>
 
 ```bash
-az keyvault create --name earthtestkvadminusetest2 --location francecentral --resource-group EarthCommand_RG --tenant-id "<tenant_id>" --sku standard --enable-soft-delete true --soft-delete-retention-days 90 --enable-rbac-authorization true --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --tags asset_owner="maxime gaspard" asset_project_desc="Phoenix Mission earth" asset_project_end="01-01-2025"
+az keyvault create --name earthtestkvadminusetest2 --location francecentral --resource-group EarthCommand_RG --sku standard --enable-soft-delete true --soft-delete-retention-days 90 --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --tags asset_owner="maxime gaspard" asset_project_desc="Phoenix Mission earth" asset_project_end="01-01-2025"
 ```
 
 </details>

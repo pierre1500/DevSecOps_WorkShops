@@ -166,19 +166,28 @@ Deploy the Earth Command Virtual Machine (VM) and ensure it is ready for operati
 - Location: `francecentral`.  
 - Use the existing NIC `EarthVM_NIC`.  
 - VM size: `Standard_B2ms`.  
-- Image: `UbuntuLTS`.  
+- Image: `Ubuntu2404`.  
 - Set up an admin username `ubuntuadmin` and password `admin_password123`.  
 - Add appropriate tags:  
   - `asset_owner`: your email address.  
   - `asset_project_desc`: "Phoenix Mission earth".  
   - `asset_project_start`: "2024-10-16".  
-  - `asset_project_end`: "2025-12-31".  
-
+  - `asset_project_end`: "2025-12-31".
+  - `availability1`: 1
+  - `availability2`: 15
+  - `maintenance1`: monday
+  - `maintenance2`: friday
+  - `shutdownaftermaintenance`: no
+  - `barcode`: barcode
+  - `autostart`: no
+  - `Auto-shutdown`: no
+  - `autoshutdown`: no
+- add storage sku
 <details>
 <summary>💡 Show Solution</summary>
 
 ```bash
-az vm create --name EarthVM --resource-group EarthCommand_RG --location francecentral --nics EarthVM_NIC --size Standard_B2ms --image UbuntuLTS --admin-username ubuntuadmin --admin-password "admin_password123" --tags asset_owner="un email" asset_project_desc="Phoenix Mission earth" asset_project_start="2024-10-16" asset_project_end="2025-12-31" availability1=1 availability2=15 maintenance1=monday maintenance2=friday shutdownaftermaintenance=no barcode="barcode" autostart=no Auto-shutdown=no autoshutdown=no --assign-identity --os-disk-name EarthVM_OSDisk --os-disk-caching ReadWrite --os-disk-storage-account-type Standard_LRS
+az vm create --name EarthVM --resource-group EarthCommand_RG --location francecentral --nics EarthVM_NIC --size Standard_B2ms --image Ubuntu2404 --admin-username ubuntuadmin --admin-password "admin_password123" --tags asset_owner="un email" asset_project_desc="Phoenix Mission earth" asset_project_start="2024-10-16" asset_project_end="2025-12-31" availability1=1 availability2=15 maintenance1=monday maintenance2=friday shutdownaftermaintenance=no barcode="barcode" autostart=no Auto-shutdown=no autoshutdown=no --assign-identity --os-disk-name EarthVM_OSDisk --os-disk-caching ReadWrite --storage-sku Standard_LRS
 ```
 
 </details>
